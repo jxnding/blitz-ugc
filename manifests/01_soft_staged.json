@@ -1,0 +1,87 @@
+{
+  "assets": {
+    "hdri": {
+      "path": "//../assets/studio_country_hall_4k.exr",
+      "sha256": "2fc0b1c5fb241367c7f0615b99b17e3f802ca6e8da1d7796350450d574b1f18f",
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/4k/studio_country_hall_4k.exr"
+    },
+    "packed": false,
+    "selfie": {
+      "aspect": "3:4",
+      "path": "//../assets/selfie.png",
+      "sha256": "17bfef209000a6966063d5d319896b26d8585bd51b5026d7b76c023b8b2e6e90"
+    }
+  },
+  "blend_path": "blends/01_soft_staged.blend",
+  "blend_sha256": "a19e1efe7cfa6767e164da260b4c05937d73a3b64fd8a884d776bbe013b19faa",
+  "blender_version": "5.2.0 LTS",
+  "created_at_utc": "2026-08-18T21:20:30+00:00",
+  "notes": [
+    "Shared validated framed portrait geometry and camera controls.",
+    "Warm plaster wall and one large Area light."
+  ],
+  "objects": {
+    "count": 4,
+    "names": [
+      "FramedPortrait",
+      "SharedCamera",
+      "SoftKeyArea",
+      "WarmPlasterWall"
+    ],
+    "types": {
+      "CAMERA": 1,
+      "LIGHT": 1,
+      "MESH": 2
+    }
+  },
+  "render_path": "renders/01_soft_staged.png",
+  "render_sha256": "69aecf1216ac1da776ac0897a94966cca265bd5f8c0deebd1f92786745e56cd9",
+  "settings": {
+    "camera": {
+      "f_stop": 5.599999904632568,
+      "focus_distance": 3.252984,
+      "lens_mm": 70.0,
+      "location": [
+        0.18,
+        0.0,
+        3.3
+      ],
+      "name": "SharedCamera",
+      "rotation_euler": [
+        0.0,
+        0.055362,
+        0.0
+      ]
+    },
+    "color_management": {
+      "exposure": 0.0,
+      "gamma": 1.0,
+      "look": "None",
+      "view_transform": "AgX"
+    },
+    "engine": "BLENDER_EEVEE",
+    "engine_family": "Eevee Next",
+    "image_format": "PNG RGB 16-bit",
+    "materials": [
+      "DarkWalnutFrame",
+      "SelfiePortrait",
+      "WarmPlaster"
+    ],
+    "render_samples": 64,
+    "resolution": [
+      2048,
+      2048
+    ],
+    "source_aspect": "3:4",
+    "world": {
+      "hdri_rotation_degrees": 0.0,
+      "strength": 0.699999988079071,
+      "visible": true
+    }
+  },
+  "timings_seconds": {
+    "build": 5.176,
+    "render": 5.124
+  },
+  "variant": "01_soft_staged"
+}

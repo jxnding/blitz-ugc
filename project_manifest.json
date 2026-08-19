@@ -1,0 +1,351 @@
+{
+  "blender_version": "5.2.0 LTS",
+  "common_settings": {
+    "camera_f_stop": 5.6,
+    "camera_lens_mm": 70.0,
+    "cycles_samples": 128,
+    "eevee_samples": 64,
+    "engines": [
+      "Eevee Next",
+      "Cycles"
+    ],
+    "exposure": 0.0,
+    "hdri_rotation_degrees": 0.0,
+    "hdri_strength": 0.7,
+    "resolution": [
+      2048,
+      2048
+    ],
+    "view_transform": "AgX"
+  },
+  "comparison": {
+    "dimensions": [
+      2080,
+      2272
+    ],
+    "path": "renders/comparison.png",
+    "sha256": "dbb047e1b7444d805b91b4b720c887a53ff824f67ad68e6d1d8ac3e6baa1488e"
+  },
+  "instant_engine_comparison": {
+    "dimensions": [
+      2080,
+      1120
+    ],
+    "path": "renders/instant_eevee_vs_cycles.png",
+    "sha256": "178a641a24473bc1010d70a46fa285492b1cfa950f077adb491a9c88bea5ab34"
+  },
+  "project_layout": "unpacked shared assets with relative Blender paths",
+  "shared_assets": {
+    "hdri": {
+      "license": "CC0",
+      "path": "assets/studio_country_hall_4k.exr",
+      "sha256": "2fc0b1c5fb241367c7f0615b99b17e3f802ca6e8da1d7796350450d574b1f18f",
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/4k/studio_country_hall_4k.exr"
+    },
+    "selfie": {
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "path": "assets/selfie.png",
+      "sha256": "17bfef209000a6966063d5d319896b26d8585bd51b5026d7b76c023b8b2e6e90",
+      "source_filename": "ChatGPT Image Aug 18, 2026, 01_31_57 PM.png"
+    }
+  },
+  "variants": {
+    "01_soft_staged": {
+      "blend": "blends/01_soft_staged.blend",
+      "blend_bytes": 93989,
+      "blend_sha256": "a19e1efe7cfa6767e164da260b4c05937d73a3b64fd8a884d776bbe013b19faa",
+      "engine": "BLENDER_EEVEE",
+      "external_image_paths": {
+        "SharedSelfie_3x4": "//../assets/selfie.png",
+        "SharedStudioCountryHallHDRI": "//../assets/studio_country_hall_4k.exr"
+      },
+      "manifest": "manifests/01_soft_staged.json",
+      "objects": {
+        "count": 4,
+        "names": [
+          "FramedPortrait",
+          "SharedCamera",
+          "SoftKeyArea",
+          "WarmPlasterWall"
+        ],
+        "types": {
+          "CAMERA": 1,
+          "LIGHT": 1,
+          "MESH": 2
+        }
+      },
+      "packed_assets": false,
+      "portrait_uv_bounds": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "render": "renders/01_soft_staged.png",
+      "render_dimensions": [
+        2048,
+        2048
+      ],
+      "render_samples": 64,
+      "render_sha256": "69aecf1216ac1da776ac0897a94966cca265bd5f8c0deebd1f92786745e56cd9",
+      "scene": "Soft_Staged"
+    },
+    "02_hdri_only": {
+      "blend": "blends/02_hdri_only.blend",
+      "blend_bytes": 90952,
+      "blend_sha256": "58cf592eccd9472db79cc6ef66f7173ae5df5c7dadbef19f0bffe1bf876e971e",
+      "engine": "BLENDER_EEVEE",
+      "external_image_paths": {
+        "SharedSelfie_3x4": "//../assets/selfie.png",
+        "SharedStudioCountryHallHDRI": "//../assets/studio_country_hall_4k.exr"
+      },
+      "manifest": "manifests/02_hdri_only.json",
+      "objects": {
+        "count": 2,
+        "names": [
+          "FramedPortrait",
+          "SharedCamera"
+        ],
+        "types": {
+          "CAMERA": 1,
+          "MESH": 1
+        }
+      },
+      "packed_assets": false,
+      "portrait_uv_bounds": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "render": "renders/02_hdri_only.png",
+      "render_dimensions": [
+        2048,
+        2048
+      ],
+      "render_samples": 64,
+      "render_sha256": "9c834ad405b5df26756c72717c7e763235a0798309e1afaf2d6b7d41084070a5",
+      "scene": "HDRI_Only"
+    },
+    "03_instant_print": {
+      "blend": "blends/03_instant_print.blend",
+      "blend_bytes": 151318,
+      "blend_sha256": "2e462d8a86b6e8e852e0d3e3fc81a3a0f976af2bab4f22883fc8ef71bd10df9b",
+      "engine": "BLENDER_EEVEE",
+      "external_image_paths": {
+        "SharedSelfie_3x4": "//../assets/selfie.png",
+        "SharedStudioCountryHallHDRI": "//../assets/studio_country_hall_4k.exr"
+      },
+      "instant_scene_signature": {
+        "background_mesh": "3eb9232bf64a7c80d6b464a6bd69eea73144de1d2d51ebc25c7e6c3cd4faf879",
+        "background_transform": [
+          0.0,
+          0.0,
+          -0.42,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "instant_mesh": "68dfeb68f5797bc9a20674deef41a2a3fa5c3d7aec28852fc3ad4cf486b7b7a3",
+        "instant_modifiers": [
+          [
+            "PhysicalPaperThickness",
+            "SOLIDIFY",
+            0.004,
+            null
+          ],
+          [
+            "SoftPaperEdges",
+            "BEVEL",
+            null,
+            0.0015
+          ]
+        ],
+        "instant_transform": [
+          0.0,
+          0.0,
+          0.0,
+          -0.0418879,
+          0.0279253,
+          -0.0698132,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "light": [
+          90.0,
+          1.5,
+          1.0,
+          0.92,
+          0.84,
+          -1.35,
+          1.25,
+          2.3499999,
+          0.6642326,
+          0.0,
+          -2.3177519
+        ],
+        "materials": {
+          "InstantGlossyEmulsion": "788bd1a1b01d39492fd6d0a88cd8ea9b1d9a2ca65cd8cad00f2917a672659be7",
+          "InstantPaperWhite": "ae8b0685a7bc43eb42e505cc6c44f8e88ebf0100f086eac78c0025e0e27c2174",
+          "InstantWarmBlurBackground": "5608412e06b0eea4330054b6a21bcb00d6b3bb5609e722558e81ebbb4bf2a02c"
+        }
+      },
+      "manifest": "manifests/03_instant_print.json",
+      "objects": {
+        "count": 4,
+        "names": [
+          "InstantPrint",
+          "InstantWarmBackground",
+          "SharedCamera",
+          "SoftKeyArea"
+        ],
+        "types": {
+          "CAMERA": 1,
+          "LIGHT": 1,
+          "MESH": 2
+        }
+      },
+      "packed_assets": false,
+      "portrait_uv_bounds": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "render": "renders/03_instant_print.png",
+      "render_dimensions": [
+        2048,
+        2048
+      ],
+      "render_samples": 64,
+      "render_sha256": "b61b74a2c95f3f433cb46de80020822afe04d68e8125b1b5f6944efd0ae6e199",
+      "scene": "Instant_Print"
+    },
+    "04_instant_print_cycles": {
+      "blend": "blends/04_instant_print_cycles.blend",
+      "blend_bytes": 151744,
+      "blend_sha256": "e85cb52f795e82dd25cc3eac5e56d52b4cd50663af30726704126e1f1ff3a44d",
+      "cycles": {
+        "adaptive_min_samples": 32,
+        "adaptive_threshold": 0.009999999776482582,
+        "compute_backend": "METAL",
+        "denoiser": "OPENIMAGEDENOISE",
+        "device": "GPU",
+        "device_name": "Apple M1 Max (GPU - 32 cores)"
+      },
+      "engine": "CYCLES",
+      "external_image_paths": {
+        "SharedSelfie_3x4": "//../assets/selfie.png",
+        "SharedStudioCountryHallHDRI": "//../assets/studio_country_hall_4k.exr"
+      },
+      "instant_scene_signature": {
+        "background_mesh": "3eb9232bf64a7c80d6b464a6bd69eea73144de1d2d51ebc25c7e6c3cd4faf879",
+        "background_transform": [
+          0.0,
+          0.0,
+          -0.42,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "instant_mesh": "68dfeb68f5797bc9a20674deef41a2a3fa5c3d7aec28852fc3ad4cf486b7b7a3",
+        "instant_modifiers": [
+          [
+            "PhysicalPaperThickness",
+            "SOLIDIFY",
+            0.004,
+            null
+          ],
+          [
+            "SoftPaperEdges",
+            "BEVEL",
+            null,
+            0.0015
+          ]
+        ],
+        "instant_transform": [
+          0.0,
+          0.0,
+          0.0,
+          -0.0418879,
+          0.0279253,
+          -0.0698132,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "light": [
+          90.0,
+          1.5,
+          1.0,
+          0.92,
+          0.84,
+          -1.35,
+          1.25,
+          2.3499999,
+          0.6642326,
+          0.0,
+          -2.3177519
+        ],
+        "materials": {
+          "InstantGlossyEmulsion": "788bd1a1b01d39492fd6d0a88cd8ea9b1d9a2ca65cd8cad00f2917a672659be7",
+          "InstantPaperWhite": "ae8b0685a7bc43eb42e505cc6c44f8e88ebf0100f086eac78c0025e0e27c2174",
+          "InstantWarmBlurBackground": "5608412e06b0eea4330054b6a21bcb00d6b3bb5609e722558e81ebbb4bf2a02c"
+        }
+      },
+      "manifest": "manifests/04_instant_print_cycles.json",
+      "objects": {
+        "count": 4,
+        "names": [
+          "InstantPrint",
+          "InstantWarmBackground",
+          "SharedCamera",
+          "SoftKeyArea"
+        ],
+        "types": {
+          "CAMERA": 1,
+          "LIGHT": 1,
+          "MESH": 2
+        }
+      },
+      "packed_assets": false,
+      "portrait_uv_bounds": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "render": "renders/04_instant_print_cycles.png",
+      "render_dimensions": [
+        2048,
+        2048
+      ],
+      "render_samples": 128,
+      "render_sha256": "dd5799ffd0c32b30e8cbd1a56a9d4916dfef7d00124ce5350a4e6b72e7edd305",
+      "scene": "Instant_Print_Cycles"
+    }
+  },
+  "verification": {
+    "all_assets_external_and_relative": true,
+    "all_assets_unpacked": true,
+    "all_blends_opened_cleanly": true,
+    "all_portrait_uvs_cover_full_source": true,
+    "blend_backup_count": 0,
+    "cycles_metal_gpu": true,
+    "hdri_only_light_count": 0,
+    "hdri_only_object_count": 2,
+    "identical_camera_across_variants": true,
+    "identical_instant_scene_except_engine": true
+  },
+  "verified_at_utc": "2026-08-19T01:54:55+00:00"
+}

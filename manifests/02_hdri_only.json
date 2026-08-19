@@ -1,0 +1,83 @@
+{
+  "assets": {
+    "hdri": {
+      "path": "//../assets/studio_country_hall_4k.exr",
+      "sha256": "2fc0b1c5fb241367c7f0615b99b17e3f802ca6e8da1d7796350450d574b1f18f",
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/4k/studio_country_hall_4k.exr"
+    },
+    "packed": false,
+    "selfie": {
+      "aspect": "3:4",
+      "path": "//../assets/selfie.png",
+      "sha256": "17bfef209000a6966063d5d319896b26d8585bd51b5026d7b76c023b8b2e6e90"
+    }
+  },
+  "blend_path": "blends/02_hdri_only.blend",
+  "blend_sha256": "58cf592eccd9472db79cc6ef66f7173ae5df5c7dadbef19f0bffe1bf876e971e",
+  "blender_version": "5.2.0 LTS",
+  "created_at_utc": "2026-08-18T21:20:32+00:00",
+  "notes": [
+    "Shared validated framed portrait geometry and camera controls.",
+    "Exactly one FramedPortrait mesh plus camera; HDRI world only."
+  ],
+  "objects": {
+    "count": 2,
+    "names": [
+      "FramedPortrait",
+      "SharedCamera"
+    ],
+    "types": {
+      "CAMERA": 1,
+      "MESH": 1
+    }
+  },
+  "render_path": "renders/02_hdri_only.png",
+  "render_sha256": "9c834ad405b5df26756c72717c7e763235a0798309e1afaf2d6b7d41084070a5",
+  "settings": {
+    "camera": {
+      "f_stop": 5.599999904632568,
+      "focus_distance": 3.252984,
+      "lens_mm": 70.0,
+      "location": [
+        0.18,
+        0.0,
+        3.3
+      ],
+      "name": "SharedCamera",
+      "rotation_euler": [
+        0.0,
+        0.055362,
+        0.0
+      ]
+    },
+    "color_management": {
+      "exposure": 0.0,
+      "gamma": 1.0,
+      "look": "None",
+      "view_transform": "AgX"
+    },
+    "engine": "BLENDER_EEVEE",
+    "engine_family": "Eevee Next",
+    "image_format": "PNG RGB 16-bit",
+    "materials": [
+      "DarkWalnutFrame",
+      "SelfiePortrait"
+    ],
+    "render_samples": 64,
+    "resolution": [
+      2048,
+      2048
+    ],
+    "source_aspect": "3:4",
+    "world": {
+      "hdri_rotation_degrees": 0.0,
+      "strength": 0.699999988079071,
+      "visible": true
+    }
+  },
+  "timings_seconds": {
+    "build": 1.643,
+    "render": 1.633
+  },
+  "variant": "02_hdri_only"
+}

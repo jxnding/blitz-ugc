@@ -1,0 +1,101 @@
+{
+  "assets": {
+    "hdri": {
+      "path": "//../assets/studio_country_hall_4k.exr",
+      "sha256": "2fc0b1c5fb241367c7f0615b99b17e3f802ca6e8da1d7796350450d574b1f18f",
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/4k/studio_country_hall_4k.exr"
+    },
+    "packed": false,
+    "selfie": {
+      "aspect": "3:4",
+      "path": "//../assets/selfie.png",
+      "sha256": "17bfef209000a6966063d5d319896b26d8585bd51b5026d7b76c023b8b2e6e90"
+    }
+  },
+  "blend_path": "blends/04_instant_print_cycles.blend",
+  "blend_sha256": "e85cb52f795e82dd25cc3eac5e56d52b4cd50663af30726704126e1f1ff3a44d",
+  "blender_version": "5.2.0 LTS",
+  "created_at_utc": "2026-08-18T22:29:36+00:00",
+  "notes": [
+    "Exact instant-print geometry, materials, camera, and HDRI world from 03_instant_print.",
+    "Cycles production settings: 128 samples, adaptive sampling, and denoising enabled.",
+    "Unbranded instant-photo paper; no hand geometry; one Area light plus the HDRI world."
+  ],
+  "objects": {
+    "count": 4,
+    "names": [
+      "InstantPrint",
+      "InstantWarmBackground",
+      "SharedCamera",
+      "SoftKeyArea"
+    ],
+    "types": {
+      "CAMERA": 1,
+      "LIGHT": 1,
+      "MESH": 2
+    }
+  },
+  "render_path": "renders/04_instant_print_cycles.png",
+  "render_sha256": "dd5799ffd0c32b30e8cbd1a56a9d4916dfef7d00124ce5350a4e6b72e7edd305",
+  "settings": {
+    "camera": {
+      "f_stop": 5.599999904632568,
+      "focus_distance": 3.252984,
+      "lens_mm": 70.0,
+      "location": [
+        0.18,
+        0.0,
+        3.3
+      ],
+      "name": "SharedCamera",
+      "rotation_euler": [
+        0.0,
+        0.055362,
+        0.0
+      ]
+    },
+    "color_management": {
+      "exposure": 0.0,
+      "gamma": 1.0,
+      "look": "None",
+      "view_transform": "AgX"
+    },
+    "cycles": {
+      "adaptive_min_samples": 32,
+      "adaptive_sampling": true,
+      "adaptive_threshold": 0.009999999776482582,
+      "compute_backend": "METAL",
+      "denoiser": "OPENIMAGEDENOISE",
+      "denoising": true,
+      "denoising_quality": "BALANCED",
+      "device": "GPU",
+      "device_name": "Apple M1 Max (GPU - 32 cores)",
+      "light_tree": true,
+      "max_bounces": 8
+    },
+    "engine": "CYCLES",
+    "engine_family": "Cycles",
+    "image_format": "PNG RGB 16-bit",
+    "materials": [
+      "InstantGlossyEmulsion",
+      "InstantPaperWhite",
+      "InstantWarmBlurBackground"
+    ],
+    "render_samples": 128,
+    "resolution": [
+      2048,
+      2048
+    ],
+    "source_aspect": "3:4",
+    "world": {
+      "hdri_rotation_degrees": 0.0,
+      "strength": 0.699999988079071,
+      "visible": true
+    }
+  },
+  "timings_seconds": {
+    "build": 28.274,
+    "render": 28.203
+  },
+  "variant": "04_instant_print_cycles"
+}
