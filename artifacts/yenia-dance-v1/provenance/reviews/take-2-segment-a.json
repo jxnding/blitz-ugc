@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "take": 2,
+  "segment": "a",
+  "output": "runs/take-2/segment-a/yenia-segment-a_00001_.mp4",
+  "output_sha256": "03c4c14337a9ba632523d149063486725c0b9832f33d2f2d00113a820ecb93a5",
+  "frames": 226,
+  "fps": 24,
+  "resolution": [576, 1024],
+  "review_scope": "every output frame plus enlarged start, quarter, middle, three-quarter, and final samples",
+  "visual_gate": "pass",
+  "checks": {
+    "exactly_one_adult_yenia": true,
+    "identity_face_and_hair_stable": true,
+    "hoodie_skirt_socks_and_sneakers_stable": true,
+    "apartment_stable": true,
+    "no_source_crowd_exterior_text_logo_or_watermark": true,
+    "hands_feet_limbs_and_occlusion_acceptable": true,
+    "no_exit_cut_or_camera_jump": true
+  },
+  "continuity_frame": {
+    "source_frame": 225,
+    "path": "runs/take-2/segment-a/final_frame.png",
+    "sha256": "5131f1bd64805cb8f11f3d34ec082933f7e4fa21a4f3f19e4931f844b3d564f6"
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "1": {
+    "class_type": "VHS_LoadVideoPath",
+    "inputs": {
+      "custom_height": 1024,
+      "custom_width": 576,
+      "force_rate": 24,
+      "frame_load_cap": 124,
+      "select_every_nth": 1,
+      "skip_first_frames": 0,
+      "video": "input/blitz-motion/20260825T175232Z-wan-h3-face/wan_probe_f210_333_124f.mp4"
+    }
+  },
+  "10": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "denoise": 1.0,
+      "model": [
+        "2",
+        0
+      ],
+      "scheduler": "beta",
+      "steps": 20
+    }
+  },
+  "11": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "guider": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "6",
+        1
+      ],
+      "noise": [
+        "8",
+        0
+      ],
+      "sampler": [
+        "9",
+        0
+      ],
+      "sigmas": [
+        "10",
+        0
+      ]
+    }
+  },
+  "12": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "5",
+        0
+      ]
+    }
+  },
+  "14": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "audio": [
+        "13",
+        0
+      ],
+      "fps": 24,
+      "images": [
+        "12",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "codec": "h264",
+      "codec.encoding": "re-encode",
+      "codec.encoding.crf": 18,
+      "filename_prefix": "blitz-motion/20260825T175232Z-wan-h3-face/probe/yenia-wan-face-probe",
+      "format": "mp4",
+      "video": [
+        "14",
+        0
+      ]
+    }
+  },
+  "2": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "20": {
+    "class_type": "VHS_LoadImagePath",
+    "inputs": {
+      "custom_height": 1024,
+      "custom_width": 576,
+      "image": "input/blitz-motion/20260825T175232Z-wan-h3-face/face.png"
+    }
+  },
+  "21": {
+    "class_type": "VHS_LoadImagePath",
+    "inputs": {
+      "custom_height": 1024,
+      "custom_width": 576,
+      "image": "input/blitz-motion/20260825T175232Z-wan-h3-face/yenia_appearance_anchor.png"
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "audio_vae": [
+        "5",
+        0
+      ],
+      "clip": [
+        "3",
+        0
+      ],
+      "height": 1024,
+      "length": 124,
+      "prompt": "<Picture 1> is the authoritative facial-identity reference for Yenia. Preserve her adult facial geometry, almond-shaped brown eyes, straight brows, nose, lips, skin tone, and natural realistic facial detail.\n<Picture 2> is the authoritative full appearance reference for the same Yenia. Preserve her compact secured black updo with short loose wisps, gray oversized hoodie, white pleated skirt, white socks, white sneakers, and neutral apartment appearance.\n<Video 1> is the authoritative base shot. Reproduce its existing single character, exact body proportions, pose, choreography, timing, motion blur, clothing, apartment, lighting, framing, scale, occlusion, and camera movement frame for frame. Change only the facial identity and fine facial detail so the existing dancer consistently looks like the Yenia in <Picture 1>, with the hair identity in <Picture 2>.\n\nThis is a restrained identity-refinement pass, not a scene redesign and not a new performance. Keep exactly one adult Yenia throughout. Preserve every body movement and all non-face content from <Video 1>. Keep her face temporally stable through front views, profile views, turns, bends, fast movement, and partial occlusion. Do not alter body shape, hands, feet, outfit, room, furniture, lighting, shadows, timing, camera, or composition. Do not add another person, reflection-person, crowd, exterior scene, text, logo, watermark, cut, restart, identity swap, outfit change, background change, disappearance, or camera jump.",
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "20",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "21",
+        0
+      ],
+      "ref_videos.ref_video_0": [
+        "1",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ],
+      "width": 576
+    }
+  },
+  "7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "conditioning": [
+        "6",
+        0
+      ],
+      "model": [
+        "2",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 24082561
+    }
+  },
+  "9": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "res_multistep"
+    }
+  }
+}

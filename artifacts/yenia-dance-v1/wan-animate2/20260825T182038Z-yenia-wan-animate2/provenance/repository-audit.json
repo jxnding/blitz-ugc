@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "validation": {
+    "skill_quick_validate": "pass",
+    "python_compile": "pass",
+    "json_parse": "pass",
+    "git_diff_check": "pass",
+    "privacy_scan": "pass"
+  },
+  "character_assets": {
+    "unchanged": true,
+    "hashes": {
+      "characters/yenia/face.png": "17bfef209000a6966063d5d319896b26d8585bd51b5026d7b76c023b8b2e6e90",
+      "characters/yenia/face_profile.png": "ddd68d16a3aa7e707bc10f39994f58ca2e4f2c8f063c9569b0b022aad7763422",
+      "characters/yenia/face_expressions.png": "cec3dd8460581eca6bb7db191e14219b60de60568a22c39cecdc4e7725212250",
+      "characters/yenia/outfits.png": "4c57f4bc30d0eae45814bd62c6aec2b4d459aad314214c05b2dd625e6a4333bc"
+    }
+  },
+  "working_tree": {
+    "preexisting_untracked_roots_preserved": [
+      "artifacts/",
+      "characters/",
+      "skills/"
+    ],
+    "intended_changes": [
+      ".gitignore",
+      "skills/blitz-motion-transfer/ Animate-2 routing, reference, runner, single-take assembly, and exhaustive verification support",
+      "artifacts/yenia-dance-v1/wan-animate2/ run settings, metadata, prompts, provenance, and deliverables"
+    ],
+    "commit_created": false,
+    "push_performed": false,
+    "publication_performed": false
+  },
+  "privacy": {
+    "contains_server_address": false,
+    "contains_password": false,
+    "contains_tokens": false,
+    "contains_absolute_user_paths": false
+  }
+}

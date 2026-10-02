@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "model": "Wan2.2 Animate-2 Base INT8 ConvRot",
+  "checkpoint": "wan2.2_animate2_14B_int8_convrot.safetensors",
+  "checkpoint_sha256": "18a34170853924a5bff1f16a37da33d9abb4686609c25ab27d657d6ebce5d0a3",
+  "smoke": {
+    "frames": 65,
+    "fps": 24,
+    "steps": 40,
+    "solver": "dpm++",
+    "guidance": 3.0,
+    "flow_shift": 5.0,
+    "elapsed_seconds": 3011.243,
+    "queue_seconds": 2943,
+    "peak_gpu_vram_mib": 19802,
+    "peak_host_ram_mib": 23930
+  },
+  "matched_distilled_smoke": {
+    "elapsed_seconds": 898.8,
+    "base_to_distilled_elapsed_ratio": 3.3503
+  },
+  "estimated_full_15_second_runtime": {
+    "hours": "4.5-5.0",
+    "status": "estimate_only_not_run"
+  }
+}

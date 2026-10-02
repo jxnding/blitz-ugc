@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "take": 1,
+  "segment": "b",
+  "output": "runs/take-1/segment-b/yenia-segment-b_00001_.mp4",
+  "output_sha256": "b6c2b728321c3ea59934bc66c4e48b8f579e1623ba850bf1448d784f72d7f621",
+  "frames": 209,
+  "fps": 24,
+  "resolution": [576, 1024],
+  "review_scope": "every output frame plus enlarged overlap, quarter, spin, recovery, and final samples",
+  "visual_gate": "reject",
+  "failure": "Yenia's secured black updo unravels into long loose hair during the spin and remains loose through the ending.",
+  "checks": {
+    "exactly_one_adult_yenia": true,
+    "identity_face_stable": true,
+    "hair_style_stable": false,
+    "hoodie_skirt_socks_and_sneakers_stable": true,
+    "apartment_stable": true,
+    "no_source_crowd_exterior_text_logo_or_watermark": true,
+    "hands_feet_limbs_and_occlusion_acceptable": true,
+    "no_exit_cut_disappearance_or_camera_jump": true
+  },
+  "decision": "Do not select this segment unless a later candidate fails more severe gates. Inspect Take 2, then use the single bounded Segment B correction only if needed."
+}

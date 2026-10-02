@@ -1,0 +1,12 @@
+Use case: identity-preserve
+Asset type: appearance and scene anchor for a vertical MiniMax H3 dance video
+Input images:
+- Image 1: edit target and base scene — Yenia full-body in her gray hoodie, white pleated skirt, white socks, and white sneakers in her neutral apartment.
+- Image 2: Yenia identity reference only — preserve her exact adult face, facial geometry, skin tone, black updo, and loose hair wisps.
+- Image 3: rights-cleared source-video pose and framing reference only — use only the central foreground dancer's posture, limb placement, body orientation, scale, and camera framing. Do not copy any source person's face, body identity, age, hair, clothing, crowd, architecture, banner, logo, text, watermark, or outdoor background.
+Primary request: Create one photorealistic 9:16 full-body image of the same adult Yenia alone in the same apartment, wearing exactly the Image 1 outfit, adjusted to closely match the central foreground dancer's crossed-leg, hand-near-head pose and full-body framing in Image 3.
+Scene/backdrop: Preserve the neutral apartment wall, couch, floor, indoor lighting, and camera character from Image 1.
+Subject: Exactly one clearly adult Yenia. Her entire body and both shoes must be visible.
+Style/medium: Natural photorealistic smartphone image with believable skin texture, fabric, contact shadows, and ordinary indoor light.
+Constraints: Change only Yenia's pose and framing to follow Image 3. Keep Yenia's face, hair, age, outfit colors and materials, apartment, and lighting unchanged. Make both hands, all fingers, legs, feet, shoes, proportions, overlaps, and shadows realistic. No extra person, duplicate limb, reflection-person, crowd, exterior, source clothing, source face, text, logo, or watermark.
+

@@ -1,0 +1,63 @@
+{
+  "created_at": "2026-08-25T06:51:32.962000+00:00",
+  "elapsed_seconds": 240.157,
+  "failure_type": null,
+  "inputs": {
+    "continue_motion_video": "blitz_wan_take01_chunk02.mp4",
+    "face_video": null,
+    "negative_prompt_sha256": "289ced80253b52153562817afbce9151a436520c168fe9b08643e8dc26d3d083",
+    "pose_video": "blitz_wan_20260825_full_vitpose_365.mkv",
+    "positive_prompt_sha256": "ad91a73e18c0161ab8d1240f84d8dd3cbd73bad5170a912c974f867ad627cd89",
+    "reference_image": "blitz_wan_20260825_yenia_anchor.png"
+  },
+  "models": {
+    "clip_vision": "clip_vision_h.safetensors",
+    "diffusion": "Wan2_2-Animate-14B_fp8_scaled_e4m3fn_KJ_v2.safetensors",
+    "lora": "lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+    "text_encoder": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "vae": "wan_2.1_vae.safetensors"
+  },
+  "outputs": {
+    "26": {
+      "animated": [
+        true
+      ],
+      "images": [
+        {
+          "filename": "take01_chunk03_00001_.mp4",
+          "subfolder": "blitz_wan",
+          "type": "output"
+        }
+      ]
+    }
+  },
+  "prompt_id": "59983d24-3f15-45e2-804b-80b6bffcefc6",
+  "schema_check": {
+    "continue_motion": "present",
+    "face_video": "present",
+    "pose_video": "present",
+    "reference_image": "present",
+    "required_nodes": "present",
+    "video_frame_offset": "present"
+  },
+  "schema_version": 1,
+  "settings": {
+    "cfg": 1.0,
+    "continue_motion_max_frames": 5,
+    "denoise": 1.0,
+    "fps": 24,
+    "height": 832,
+    "length": 77,
+    "lora_strength": 1.0,
+    "output_prefix": "blitz_wan/take01_chunk03",
+    "sampler": "euler",
+    "sampling_shift": 8.0,
+    "scheduler": "simple",
+    "seed": 24082204,
+    "steps": 6,
+    "video_frame_offset": 216,
+    "width": 480
+  },
+  "status": "success",
+  "workflow_sha256": "f942e71fdf6ca0af38ed203802ab188eea065e121849447879ba3eded643a779"
+}

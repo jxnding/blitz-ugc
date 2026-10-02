@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "path_base": "repository_root",
+  "privacy": "No sensitive connection details or absolute user paths are recorded.",
+  "generation_allocation": {
+    "comfyui": {
+      "binding": "localhost-only",
+      "gpu": "NVIDIA GeForce RTX 3090"
+    },
+    "llama_chat": {
+      "action": "stopped only while ComfyUI required the RTX 3090"
+    },
+    "llama_embed": {
+      "gpu": "NVIDIA GeForce RTX 2080 Ti",
+      "action": "left running and healthy"
+    }
+  },
+  "interruption": {
+    "first_single_run_status": "failed-connection-reset",
+    "recoverable_output_found": false,
+    "duplicate_submission_avoided": true,
+    "recovery_action": "verified empty queue and missing output, then submitted one recovery run with the same seed and settings"
+  },
+  "restoration": {
+    "verified_utc": "2026-08-25T03:21:08Z",
+    "comfyui_queue_empty_before_stop": true,
+    "comfyui_stop_scope": "validated timestamped-run PID only",
+    "comfyui_localhost_port_closed": true,
+    "llama_chat": {
+      "container_state": "running",
+      "healthcheck": "healthy",
+      "http_health_response": {
+        "status": "ok"
+      }
+    },
+    "llama_embed": {
+      "container_state": "running",
+      "healthcheck": "healthy",
+      "interrupted": false
+    },
+    "local_tunnel_closed": true
+  }
+}

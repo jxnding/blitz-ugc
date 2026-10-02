@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-08-21T03:35:18.669853+00:00",
+  "elapsed_seconds": 3805.884,
+  "failure_type": null,
+  "inputs": {
+    "motion_video": "input/blitz-motion/20260821T001214Z-yenia-dance/isolated-stabilized/segment_a.mp4",
+    "paired_audio": true,
+    "prompt_file": "h3_segment_a.txt",
+    "prompt_sha256": "7943d3278ab252f7bc82a048e1927852890b200fc02cc147917897350dc03d99",
+    "reference_images": [
+      "input/blitz-motion/20260821T001214Z-yenia-dance/yenia_h3_appearance_anchor.png",
+      "input/blitz-motion/20260821T001214Z-yenia-dance/face.png"
+    ]
+  },
+  "models": {
+    "audio_vae": "minimax_h3_audio_vae_fp32.safetensors",
+    "diffusion": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "text_encoder": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+    "video_vae": "minimax_h3_video_vae_fp16.safetensors"
+  },
+  "outputs": {
+    "15": {
+      "animated": [
+        true
+      ],
+      "images": [
+        {
+          "filename": "yenia-segment-a_00001_.mp4",
+          "subfolder": "blitz-motion/20260821T001214Z-yenia-dance/take-1/segment-a",
+          "type": "output"
+        }
+      ]
+    }
+  },
+  "prompt_id": "39f9aff4-0077-4b63-bb18-16860e97f822",
+  "schema_check": {
+    "h3_reference_slots": "present",
+    "required_nodes": "present",
+    "video_audio_output": "present"
+  },
+  "schema_version": 1,
+  "settings": {
+    "denoise": 1.0,
+    "fps": 24,
+    "height": 1024,
+    "length": 226,
+    "output_prefix": "blitz-motion/20260821T001214Z-yenia-dance/take-1/segment-a/yenia-segment-a",
+    "ref_image_size": "match",
+    "sampler": "res_multistep",
+    "scheduler": "beta",
+    "seed": 24082011,
+    "steps": 20,
+    "width": 576
+  },
+  "status": "success",
+  "workflow_sha256": "49abfa8dd66d4050e526ca838dd2bddf0b0dc694f18587ffbd20bba4c65c054c"
+}

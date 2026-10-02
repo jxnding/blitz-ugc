@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blitz Motion Transfer"
+  short_description: "Produce one-person Animate-2, Wan, or H3 transfers"
+  default_prompt: "Use $blitz-motion-transfer to create a rights-cleared, one-character motion-transfer video with Wan Animate-2 direct control, Wan pose control, or MiniMax H3, plus deterministic provenance, visual QA, and scoped service restoration."

@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "project": "Yenia Apartment Dance H3 continuity comparison",
+  "status": "complete-local-only",
+  "completed_utc": "2026-08-25T03:21:08Z",
+  "path_base": "repository_root",
+  "publication": {
+    "committed": false,
+    "pushed": false,
+    "published": false
+  },
+  "rights": {
+    "source_visuals": "user-confirmed-cleared-for-this-adaptation",
+    "source_audio": "user-confirmed-cleared-for-this-adaptation",
+    "character": "original-clearly-adult-virtual-character"
+  },
+  "source_assets": [
+    {
+      "path_label": "external-source-video",
+      "role": "motion, timing, camera movement, and approved soundtrack only",
+      "sha256": "8f5011accef0b5be61618d8bd845c63add3b007c4fb640f246a6b4ad682d2913"
+    },
+    {
+      "path": "characters/yenia/face.png",
+      "role": "Yenia identity close-up",
+      "sha256": "17bfef209000a6966063d5d319896b26d8585bd51b5026d7b76c023b8b2e6e90"
+    },
+    {
+      "path": "characters/yenia/face_profile.png",
+      "role": "retained unchanged and unused",
+      "sha256": "ddd68d16a3aa7e707bc10f39994f58ca2e4f2c8f063c9569b0b022aad7763422"
+    },
+    {
+      "path": "characters/yenia/face_expressions.png",
+      "role": "retained unchanged and unused",
+      "sha256": "cec3dd8460581eca6bb7db191e14219b60de60568a22c39cecdc4e7725212250"
+    },
+    {
+      "path": "characters/yenia/outfits.png",
+      "role": "Yenia hoodie outfit and apartment source sheet",
+      "sha256": "4c57f4bc30d0eae45814bd62c6aec2b4d459aad314214c05b2dd625e6a4333bc"
+    },
+    {
+      "path": "artifacts/yenia-dance-v1/inputs/yenia_h3_appearance_anchor.png",
+      "role": "appearance, outfit, apartment, light, and composition reference",
+      "sha256": "9728c986d07d3e6399caf4f6961fb496ff9f432e27d059fcf469a1ca0b10cef6"
+    }
+  ],
+  "motion_guides": {
+    "base": {
+      "path": "artifacts/yenia-dance-v1/runs/sam2-attempt-3/isolated_active_reference_stabilized.mp4",
+      "role": "one tracked dancer on a neutral matte; motion, timing, position, scale, and camera only",
+      "frames": 430,
+      "fps": 24,
+      "sha256": "ec9f2ebe56ff31a3c4934795ffe3d022f94f5da021c40db868296bc72e9d18f6"
+    },
+    "guided_segment_b": {
+      "path": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/inputs/guided-overlap/segment_b.mp4",
+      "source_frames": [204, 429],
+      "frames": 226,
+      "sha256": "4d3a4a00d802bb6a31fb68a92f802147d6aa55aff090eab17d5110b31734234c"
+    },
+    "guided_visual_history": {
+      "path": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/inputs/guided-overlap/segment_a_frames_204_225_guide.mkv",
+      "role": "22 lossless visual-history frames supplied through MiniMaxH3AddGuide",
+      "source_frames": [204, 225],
+      "frames": 22,
+      "sha256": "66912caae6cb86813b5b8ba0de1c64ff43ef725735466ca0b79de364c7cd3aee",
+      "decoded_pixels_match_accepted_segment_a": true
+    },
+    "single_run": {
+      "path": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/inputs/single-run/segment_a.mp4",
+      "source_frames": [0, 361],
+      "frames": 362,
+      "sha256": "892b499c5046dee0e98ac157b5a00d8dcc575f84fd27ee7c849fce786795395e"
+    }
+  },
+  "runtime": {
+    "engine": "MiniMax H3 Ref2VA through local ComfyUI",
+    "comfyui_commit": "a7365071e47175fb06572d0a56d1bf4116c2f581",
+    "generation_gpu": "NVIDIA GeForce RTX 3090",
+    "settings": {
+      "resolution": [576, 1024],
+      "fps": 24,
+      "steps": 20,
+      "sampler": "res_multistep",
+      "scheduler": "beta",
+      "denoise": 1.0,
+      "ref_image_size": "match",
+      "paired_motion_audio": true,
+      "generated_audio_delivered": false
+    },
+    "models": [
+      {
+        "role": "diffusion",
+        "filename": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "sha256": "9255f52b6677845ad238f20dfaafa94727053694127ab7f255c048f0f9365779"
+      },
+      {
+        "role": "text_encoder",
+        "filename": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "sha256": "35a88d51044231fe332301d7a62aa81e3f2cba62febeb446e2c1e3e0ef76f2c6"
+      },
+      {
+        "role": "video_vae",
+        "filename": "minimax_h3_video_vae_fp16.safetensors",
+        "sha256": "7c1f131492e7eddacaac9069a61b81bdd39de5cc96561e677c5eab1cdce5e522"
+      },
+      {
+        "role": "audio_vae",
+        "filename": "minimax_h3_audio_vae_fp32.safetensors",
+        "sha256": "8e505d95dd1561d47abd43d4238fd40d9bb1ae9e147ed0a4cba778d76ae4db48"
+      }
+    ]
+  },
+  "generations": {
+    "guided_segment_b": {
+      "prompt": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/prompts/h3_segment_b_addguide22.txt",
+      "prompt_sha256": "5d1e7abd6deee7e11c9a00d8c3b38576a56c5a02c256aaac2d3922ebd99d1f61",
+      "workflow": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/workflows/guided_segment_b.workflow.json",
+      "workflow_sha256": "cd7f05d95f16cc4ef24a5a844374c9ddb614ec88a310c4901c2be45b1a54189d",
+      "seed": 24082022,
+      "frames": 226,
+      "raw_output_sha256": "6f38fd0ef33af4dfe545124a82e78999c00f2666dff1f468df8830dd4c1dd142",
+      "elapsed_seconds": 4166.95,
+      "status": "success"
+    },
+    "single_first_attempt": {
+      "seed": 24082041,
+      "frames": 362,
+      "status": "failed-connection-reset",
+      "elapsed_seconds": 4056.854,
+      "output_recovered": false,
+      "metadata": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/metadata/single_15s.failed_connection_reset.metadata.json"
+    },
+    "single_recovery": {
+      "prompt": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/prompts/h3_single_15s.txt",
+      "prompt_sha256": "e0eba2e78db0d8c57793299b0f58d4da7f81f0f198e2d43f644017d059450159",
+      "workflow": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/workflows/single_15s.retry.workflow.json",
+      "workflow_sha256": "3d66dbd4b2b92647c4d5d597b103e2ba32cfdc3c6212fc262e84466f89e3909c",
+      "seed": 24082041,
+      "frames": 362,
+      "raw_output_sha256": "70c31a98c877152774856725290ffaf9434349939e486a189d4dadc3253ef5b3",
+      "elapsed_seconds": 6820.351,
+      "status": "success"
+    }
+  },
+  "assembly": {
+    "guided_bestcut18": {
+      "accepted_segment_a_seed": 24082021,
+      "accepted_segment_a_sha256": "03c4c14337a9ba632523d149063486725c0b9832f33d2f2d00113a820ecb93a5",
+      "segment_a_frames_used": [0, 221],
+      "guided_segment_b_frames_used": [18, 225],
+      "frames": 430,
+      "fps": 24,
+      "duration_seconds": 17.9166666667,
+      "model_master": {
+        "path": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/final/yenia_dance_h3_guided_bestcut18_model_master.mkv",
+        "sha256": "3d7260dbdfb6fedd123b308f410d7b1433f067ca44b3fe43d64272270b890127",
+        "audio_pcm_sha256": "86fd4148f80820668c9d6a9efc3d9914cfb3ed7f130c1dc759339d1d90b35c7f",
+        "audio_pcm_matches_approved_source_range": true
+      },
+      "delivery": {
+        "path": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/final/yenia_dance_h3_guided_bestcut18_1080x1920.mp4",
+        "sha256": "1d5065b44b4032ce6a2637674b54178e2c0faef04b848d2ecab01e528e499231",
+        "resolution": [1080, 1920],
+        "video": "H.264 CRF 18, yuv420p, fast-start",
+        "audio": "AAC stereo approximately 192 kbps"
+      }
+    },
+    "single_15s": {
+      "generated_frames": 362,
+      "generated_tail_frames_trimmed": 2,
+      "source_frames_delivered": [0, 359],
+      "frames": 360,
+      "fps": 24,
+      "duration_seconds": 15.0,
+      "original_active_frames_not_delivered": 70,
+      "original_active_seconds_not_delivered": 2.9166666667,
+      "model_master": {
+        "path": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/final/yenia_dance_h3_single_15s_model_master.mkv",
+        "sha256": "72574eb6d5d0546f83989de2eb3d7ec77b51bc7cea4a63c306df1dfbd583d8f0",
+        "audio_pcm_sha256": "fdd2d31f4edd54f143c8828e63a31718bd1f3809505dbb1b7a7aba3d2de0dd9a",
+        "audio_pcm_matches_approved_source_range": true
+      },
+      "delivery": {
+        "path": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/final/yenia_dance_h3_single_15s_1080x1920.mp4",
+        "sha256": "d229685ad68cf28a05db28c4011bb5be20af67b8ab91a87f26acd50b024b20b5",
+        "resolution": [1080, 1920],
+        "video": "H.264 CRF 18, yuv420p, fast-start",
+        "audio": "AAC stereo approximately 192 kbps"
+      }
+    }
+  },
+  "qa": {
+    "guided_technical": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/qa/guided_bestcut18_verification.json",
+    "single_technical": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/qa/single_15s_verification.json",
+    "visual_comparison": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/qa/comparison_visual_review.json",
+    "verdict": "guided_bestcut18 preferred; both outputs retain a late hairstyle defect, while single_15s additionally fails apartment preservation"
+  },
+  "server_lifecycle": "artifacts/yenia-dance-v1/comparisons/20260822T195050Z-yenia-compare/provenance/server-lifecycle.json"
+}

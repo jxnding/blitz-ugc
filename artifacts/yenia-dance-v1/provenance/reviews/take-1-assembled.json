@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "take": 1,
+  "model_master": {
+    "path": "runs/take-1/assembled/model_master.mkv",
+    "sha256": "22dcd3fceeb28e7895f56d7ad4a225677865db2a3e049c104d751febe93d4921"
+  },
+  "delivery_preview": {
+    "path": "runs/take-1/assembled/yenia_dance_h3_1080x1920.mp4",
+    "sha256": "dd6f49c546bca63200643194c2a0bb99dbebbaf5673600f491708069097aa295"
+  },
+  "assembly": {
+    "segment_a_frames_used": [0, 225],
+    "segment_b_frames_used": [5, 208],
+    "frames": 430,
+    "fps": 24,
+    "duration_seconds": 17.916667,
+    "audio": "approved source range decoded exactly into the model master"
+  },
+  "technical_gate": "pass",
+  "visual_gate": "reject",
+  "reasons": [
+    "the hard join visibly resets from Segment A's arms-up wide stance to the appearance anchor's crossed-leg pose",
+    "Yenia's secured black updo becomes long loose hair during Segment B and remains loose through the ending"
+  ],
+  "decision": "Do not deliver Take 1. Preserve it as the comparison that names the bounded Segment B retry defects."
+}

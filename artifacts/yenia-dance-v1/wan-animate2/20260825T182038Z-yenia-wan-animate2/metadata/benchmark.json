@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "hardware": {
+    "generation_gpu": "NVIDIA GeForce RTX 3090 24 GB",
+    "other_gpu_service": "llama-embed remained healthy on NVIDIA GeForce RTX 2080 Ti 11 GB",
+    "host_ram_note": "Peak run RAM stayed below 32 GB, although the measured host has more installed memory."
+  },
+  "animate2_smoke": {
+    "input_frames": 65,
+    "seed": 24082601,
+    "generation_time_seconds_from_video_metadata": 465,
+    "queue_time_seconds_from_live_log": 861,
+    "runner_elapsed_seconds": 898.8,
+    "generation_frames_per_second": 0.139785,
+    "runner_frames_per_second": 0.072319,
+    "peak_gpu_vram_mib": 19504,
+    "peak_host_ram_mib": 23780,
+    "note": "The first run included initial dependency/model download and startup work."
+  },
+  "animate2_full": {
+    "submitted_frames": 361,
+    "delivered_frames": 360,
+    "seed": 24082611,
+    "generation_time_seconds_from_video_metadata": 2500,
+    "queue_time_seconds_from_live_log": 2517,
+    "runner_elapsed_seconds": 2551.376,
+    "generation_frames_per_second": 0.1444,
+    "runner_frames_per_second": 0.141492,
+    "wall_clock_to_delivered_duration_ratio": 170.091733,
+    "peak_gpu_vram_mib": 19504,
+    "peak_host_ram_mib": 24542,
+    "profile_fallback_used": false
+  },
+  "old_wan_reference": {
+    "pipeline": "Wan2.2-Animate pose-only with ViTPose-H and five manually submitted continuation chunks",
+    "selected_chunk_elapsed_seconds": 1201.31,
+    "delivered_frames": 360,
+    "new_to_old_selected_generation_wall_ratio": 2.123828,
+    "caveat": "This is an observed workflow comparison, not a controlled model-speed benchmark: model, steps, control path, and orchestration differ, and pose-extraction time is excluded."
+  }
+}

@@ -1,0 +1,28 @@
+subject_definitions:
+<Subject 1> is the same original, clearly adult Yenia whose appearance is established by <Picture 2> and <Picture 3>: stable facial geometry and skin tone, a secured black updo with only short face-framing wisps, consistent body proportions, gray hoodie, white pleated skirt, white socks, and white sneakers.
+<Subject 2> is Yenia's neutral apartment in <Picture 1> and <Picture 2>, including the pale wall, couch, wood floor, doorway, soft indoor lighting, and vertical smartphone composition.
+<Picture 1> is Segment A's exact final frame and the first-frame composition anchor for this continuation.
+<Video 1> is a rights-cleared temporal reference that supplies only choreography, timing, subject scale and position, and camera motion. Its person's identity, hair, body appearance, clothing, and all removed source scenery are excluded.
+<Audio 1> is the synchronized rhythm reference paired with <Video 1>; it supplies beat and timing only.
+
+summary:
+[keyframe completion + reference generation + audio reference] The target is one continuous photorealistic vertical shot of <Subject 1> dancing alone in <Subject 2>. It begins from <Picture 1>, then follows <Video 1>'s temporal structure and <Audio 1>'s beat without copying any source person or scene.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - Yenia's adult identity, face, secured black updo, body proportions, hoodie, skirt, socks, and sneakers remain unchanged in every frame.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - the same apartment, lighting, layout, and vertical composition remain stable.
+<Picture 1> ([Shot 1] first frame): fully_preserved - the opening pose, camera scale, lighting, and composition continue directly from Segment A.
+<Video 1> (movement, timing, scale, position, and camera structure): fully_preserved - only its temporal role is retained; its source person's appearance and excluded scenery are never transferred.
+<Audio 1>: reference - its beat and timing guide the dance, while generated audio is discarded.
+
+detailed_description:
+Natural photorealistic smartphone video with ordinary indoor light, realistic skin and fabric, stable anatomy, and one unbroken camera take.
+[Shot 1] The shot begins from <Picture 1>. <Subject 1> is already dancing alone in <Subject 2> with her arms raised and feet set exactly as Segment A ended. Frames 0 through 4 are overlap continuity context: retain the opening camera scale, pose progression, face, updo, outfit, and apartment while following the small intervening movement from <Video 1>, so frame 5 proceeds naturally with no reset, cut, or jump. Continue the full choreography, rhythm, body orientation, subject position and scale, and camera motion from <Video 1>. During bends, turns, back-facing spins, and head tosses, the secured black updo stays tied and compact; only its short existing wisps move naturally. Never reproduce the guide person's long loose hair. Keep Yenia's face, age, body identity, gray hoodie, white skirt, socks, sneakers, hands, fingers, legs, feet, fabric, shadows, and occlusions consistent. The derived late bridge is one continuous motion by the same Yenia, not an exit, re-entry, disappearance, cut, or identity handoff. Its final held guide pose remains one visible Yenia through the last frame. Never add another person, partial body, crowd, reflection-person, exterior location, source architecture, banner, TikTok element, text, logo, or watermark.
+
+overall_soundscape:
+No generated sound is delivered; <Audio 1> is used only as a timing reference during generation.
+
+non_diegetic_music:
+<Audio 1> provides the exact rhythmic pacing reference; the generated track is discarded and the cleared source soundtrack is restored during final assembly.
+
+Correction: the rejected Segment B reset to <Picture 2>'s crossed-leg pose at the seam, then unraveled Yenia's secured black updo into long loose hair during the spin. Continue directly from <Picture 1> without a pose or camera reset, and never let her hair become long, fully loose, or down.

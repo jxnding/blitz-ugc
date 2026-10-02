@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "deviations": [
+    {
+      "requested": "65-frame internal WanGP windows with five-frame overlap",
+      "implemented": "65-frame internal WanGP windows with one-frame overlap",
+      "reason": "The pinned WanGP Animate-2 model definition classifies Animate-2 as a native one-frame-overlap I2V model. Its live dry-run schema rejects values above one before generation.",
+      "safety_decision": "Preserve the pinned commit and model-native execution path instead of patching unvalidated window semantics.",
+      "unchanged": [
+        "one submitted direct-transfer job",
+        "automatic internal windows",
+        "361 generated frames before final trim",
+        "no pose or face-control extraction",
+        "distilled INT8 ConvRot checkpoint",
+        "seeds, prompts, resolution, steps, solver, flow shift, guidance, exact attention, and disabled KV cache"
+      ]
+    },
+    {
+      "requested": "480x832 model-resolution generation and master",
+      "implemented": "WanGP generated its native 480x848 aspect bucket; delivery is center-cropped to 480x832 by removing eight pixels from both the top and bottom",
+      "reason": "The pinned Animate-2 runtime normalizes the requested dimensions to a supported latent aspect bucket. The smoke output was 480x848 despite the normalized request remaining 480x832 in its job metadata.",
+      "safety_decision": "Keep the visually approved native generation path and apply a deterministic lossless center crop after generation, without resizing or changing temporal content.",
+      "unchanged": [
+        "all generated frames",
+        "24 fps timing",
+        "character identity and choreography",
+        "final 720x1280 delivery dimensions",
+        "source-audio restoration"
+      ]
+    }
+  ]
+}

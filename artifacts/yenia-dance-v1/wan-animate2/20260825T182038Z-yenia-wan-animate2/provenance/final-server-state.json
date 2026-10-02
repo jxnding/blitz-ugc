@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "wan_worker_running": false,
+  "rtx_3090": {
+    "memory_used_mib": 33,
+    "utilization_percent": 0,
+    "state": "free"
+  },
+  "llama_embed": {
+    "state": "running_and_healthy",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti"
+  },
+  "llama_chat": {
+    "state": "intentionally_stopped_by_user_request"
+  },
+  "privacy": {
+    "contains_server_address": false,
+    "contains_password": false,
+    "contains_tokens": false,
+    "contains_absolute_user_paths": false
+  }
+}

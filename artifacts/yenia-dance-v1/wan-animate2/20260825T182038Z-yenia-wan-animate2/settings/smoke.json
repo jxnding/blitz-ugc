@@ -1,0 +1,29 @@
+{
+  "alt_prompt": "Use the isolated person and temporal sequence in the driving video only to transfer choreography, body timing, facial-expression timing, full-body framing, subject scale, rhythm, and camera movement to Yenia. The flat gray pixels surrounding the isolated person are segmentation placeholders, not a location, wall, floor, or color reference, and must never appear in the result. Keep Yenia continuously inside the apartment from the character image. Preserve exactly one adult Yenia through every turn, occlusion, fast movement, and the late source-performer handoff; she never exits, changes identity, or becomes a second person.",
+  "custom_settings": {
+    "animate2_kv_cache": "Disabled"
+  },
+  "flow_shift": 5.0,
+  "force_fps": "control",
+  "guidance_scale": 1.0,
+  "image_prompt_type": "S",
+  "image_start": "../blitz-runs/20260825T182038Z-yenia-wan-animate2/inputs/yenia_appearance_anchor.png",
+  "model_type": "animate2_distilled",
+  "negative_prompt": "gray matte, gray background, flat gray field, segmentation background, outdoor scene, street, crowd, extra person, second dancer, duplicate person, reflection person, source performer face, red shirt, polka-dot clothing, source clothing, identity swap, face drift, age drift, long loose hair, hairstyle change, outfit change, apartment change, disappearing character, body handoff, cut, restart, camera jump, text, caption, logo, watermark, TikTok interface, banner, blurry face, deformed face, unstable eyes, extra limbs, missing limbs, fused fingers, extra fingers, deformed hands, deformed feet, broken anatomy, flicker, low quality",
+  "num_inference_steps": 10,
+  "output_filename": "yenia_animate2_smoke_seed24082601.mp4",
+  "override_attention": "sdpa",
+  "override_profile": 3,
+  "prompt": "One clearly adult original virtual character named Yenia, and no other person. Preserve Yenia's consistent face with almond-shaped brown eyes, straight brows, natural nose and lips, warm light-medium skin, and realistic facial detail. Her black hair is secured in the same compact updo with only short loose wisps. She wears the same oversized gray hoodie, white pleated skirt, white socks, and clean white sneakers. Keep her realistic proportions, hands, and feet. Keep the full-body vertical composition inside the same warm modern apartment shown in the character image, with the same pale walls, wood floor, soft neutral furnishings, natural indoor light, colors, and spatial layout. Her identity, hair, clothing, and apartment remain unchanged throughout the continuous shot.",
+  "prompt_enhancer": "",
+  "remove_background_images_ref": 0,
+  "repeat_generation": 1,
+  "resolution": "480x832",
+  "sample_solver": "euler",
+  "seed": 24082601,
+  "sliding_window_overlap": 1,
+  "sliding_window_size": 65,
+  "video_guide": "../blitz-runs/20260825T182038Z-yenia-wan-animate2/inputs/motion_guide_smoke_f216_280_65.mkv",
+  "video_length": 65,
+  "video_prompt_type": "UV"
+}

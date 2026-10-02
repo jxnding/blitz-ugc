@@ -2,6 +2,22 @@
 .venv/
 __pycache__/
 *.py[cod]
+.jspace/
 *.blend1
 *.blend2
 *.tmp
+
+# Local AI-video inputs and generation scratch space
+source_media/
+artifacts/**/inputs/
+artifacts/**/runs/
+artifacts/**/remote/
+artifacts/**/raw/
+artifacts/**/controls/
+artifacts/**/qa/
+artifacts/**/logs/
+artifacts/**/final/*.mkv
+artifacts/**/final/*.mp4
+remote-staging/
+artifacts/**/*.env
+artifacts/**/*.env.*

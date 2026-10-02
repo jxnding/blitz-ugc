@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "run_id": "20260825T182038Z-yenia-wan-animate2",
+  "status": "complete_comparison_take_with_recorded_late_hair_identity_limitation",
+  "rights": {
+    "character": "original clearly adult virtual character",
+    "driving_visuals": "cleared for choreography, timing, expression timing, framing, and camera motion",
+    "audio": "cleared source audio for frames 0-359",
+    "excluded_source_roles": [
+      "identity",
+      "face",
+      "clothing",
+      "crowd",
+      "exterior scene",
+      "text",
+      "logos",
+      "watermarks"
+    ]
+  },
+  "inputs": {
+    "character_image": {
+      "path": "inputs/yenia_appearance_anchor.png",
+      "role": "identity, face, hair, outfit, apartment",
+      "sha256": "9728c986d07d3e6399caf4f6961fb496ff9f432e27d059fcf469a1ca0b10cef6"
+    },
+    "driving_video": {
+      "path": "inputs/motion_guide_360.mkv",
+      "role": "direct RGB choreography, expression timing, framing, and camera motion",
+      "frames": 360,
+      "fps": 24,
+      "sha256": "9668bddb5f70c58a3c98415b1d89fbc27e72b1ec3199d7b273e822a53a5cba27"
+    },
+    "padded_driving_video": {
+      "path": "inputs/motion_guide_361_padded.mkv",
+      "frames": 361,
+      "padding": "one cloned final frame",
+      "sha256": "f302f72784335dc6155529e63af9cdee5fc345723db7ca5d126d46442f7c8679"
+    },
+    "audio_source": {
+      "path": "inputs/source_dance.mp4",
+      "sha256": "8f5011accef0b5be61618d8bd845c63add3b007c4fb640f246a6b4ad682d2913"
+    }
+  },
+  "direct_input_boundary": {
+    "media_inputs": [
+      "character image",
+      "direct driving video"
+    ],
+    "excluded_from_job": [
+      "pose video",
+      "face-crop video",
+      "source crowd RGB",
+      "preprocessing model"
+    ],
+    "note": "WanGP populated shared optional preprocessing assets during setup, but none was supplied or connected to this job."
+  },
+  "software": {
+    "wan_gp_commit": "f76ef2bb848a7d6bfc94779d493b2a9f149cd683",
+    "wan_gp_video_metadata_type": "WanGP v12.643 by DeepBeepMeep - Wan2.2 Animate 2 14B Distilled",
+    "python": "3.12.0",
+    "torch": "2.10.0+cu130",
+    "cuda": "13.0",
+    "diffusers": "0.36.0",
+    "transformers": "4.54.0"
+  },
+  "model": {
+    "type": "animate2_distilled",
+    "checkpoint": "wan2.2_animate2_14B_distilled_int8_convrot.safetensors",
+    "checkpoint_bytes": 17025886450,
+    "checkpoint_sha256": "f03ff1ea9642522c88251dfaf18012942de8c25c3ebdce835c65dda3a5249b7c",
+    "preset": "animate2_distilled.json"
+  },
+  "prompts": {
+    "main": {
+      "path": "prompts/main.txt",
+      "sha256": "26d3dd6ed25195b165583251c47a50e9e0ef78e3a4e71cf7ac41af99330f6620"
+    },
+    "driving": {
+      "path": "prompts/driving.txt",
+      "sha256": "7bb1d19e03a112f2339b4bf589c8aa95bc64f776006a7f9a678eb2ac30202aca"
+    },
+    "negative": {
+      "path": "prompts/negative.txt",
+      "sha256": "ab8fce7d6d47bd9c36a7ff34a4bacedbfd0c58594e26cb985ca1104428436503"
+    }
+  },
+  "generation": {
+    "mode": "one submitted direct Animate-2 job with model-native internal windows",
+    "settings": {
+      "seed": 24082611,
+      "submitted_frames": 361,
+      "fps": 24,
+      "requested_resolution": [480, 832],
+      "native_output_resolution": [480, 848],
+      "steps": 10,
+      "solver": "euler",
+      "flow_shift": 5.0,
+      "guidance": 1.0,
+      "profile": 3,
+      "profile_fallback_used": false,
+      "window_size": 65,
+      "window_overlap": 1,
+      "window_overlap_reason": "Pinned Animate-2 schema enforces its native one-frame overlap.",
+      "image_prompt_type": "S",
+      "video_prompt_type": "UV",
+      "kv_cache": "disabled",
+      "requested_attention_override": "sdpa",
+      "effective_exact_attention_backend_from_live_log": "cudnn"
+    },
+    "progressive_stitched_frame_counts": [65, 129, 193, 257, 321, 361],
+    "selected_raw": {
+      "path": "raw/full/yenia_animate2_full_seed24082611_361f.mp4",
+      "frames": 361,
+      "sha256": "84ce2908d2c11a9acb0c516c231d4258bd9ae8b99d888e12661ad1df13ff0a2c"
+    },
+    "smoke": {
+      "path": "raw/smoke/yenia_animate2_smoke_seed24082601.mp4",
+      "source_frames": [216, 280],
+      "seed": 24082601,
+      "status": "pass",
+      "sha256": "83b47c2596088940271ff0eddfe023effe1503fa6b3393527b14b94b201f00a6"
+    }
+  },
+  "assembly": {
+    "generated_frames": 361,
+    "delivered_frames": 360,
+    "trimmed_generated_tail_frames": 1,
+    "native_center_crop": [480, 832, 0, 8],
+    "delivery_aspect_crop": [468, 832],
+    "audio": "cleared source audio frames 0-359",
+    "decoded_source_master_pcm_match": true,
+    "decoded_pcm_sha256": "fdd2d31f4edd54f143c8828e63a31718bd1f3809505dbb1b7a7aba3d2de0dd9a"
+  },
+  "visual_qa": {
+    "every_delivered_frame_reviewed": true,
+    "one_person_all_frames": true,
+    "gray_or_source_background_leakage": false,
+    "source_face_or_clothing_leakage": false,
+    "visible_internal_window_reset": false,
+    "face_identity_jump_at_0_10": false,
+    "recorded_limitation": "The compact updo briefly stretches around frames 123-129 and becomes a long ponytail-like moving shape around frames 324-359.",
+    "review": "qa/full-review.json"
+  },
+  "outputs": {
+    "model_master": {
+      "path": "final/yenia_dance_wan_animate2_distilled_480x832_master.mkv",
+      "sha256": "14d7589288bce67ee7ecdf29695f7b3c7c89d84c7716f51796145e39068d8f34",
+      "frames": 360,
+      "duration_seconds": 15.0,
+      "resolution": [480, 832],
+      "video_codec": "ffv1",
+      "audio_codec": "pcm_s16le"
+    },
+    "delivery": {
+      "path": "final/yenia_dance_wan_animate2_distilled_720x1280.mp4",
+      "sha256": "d6258c1feee0d4b4b55a37a037b3cf53f1c769a92bff66d3602bb9e5a991074c",
+      "frames": 360,
+      "duration_seconds": 15.0,
+      "resolution": [720, 1280],
+      "fps": 24,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "faststart": true
+    },
+    "comparison": {
+      "path": "final/old_wan_left_vs_animate2_right_720x640.mp4",
+      "sha256": "5535723d8b3caac936e8369389c4eca66a05962858dbb2008b857af185f718d6",
+      "layout": "old Wan pose-only on the left; Animate-2 direct transfer on the right",
+      "frames": 360,
+      "duration_seconds": 15.0
+    }
+  },
+  "service_final_state": "provenance/final-server-state.json",
+  "plan_deviations": "provenance/plan-deviations.json",
+  "repository_audit": "provenance/repository-audit.json",
+  "benchmark": "metadata/benchmark.json",
+  "character_assets_unchanged": true,
+  "privacy": {
+    "contains_server_address": false,
+    "contains_password": false,
+    "contains_tokens": false,
+    "contains_absolute_user_paths": false
+  },
+  "publication": "not_requested"
+}

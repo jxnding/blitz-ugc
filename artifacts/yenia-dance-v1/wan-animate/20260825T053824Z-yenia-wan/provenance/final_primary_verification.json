@@ -1,0 +1,64 @@
+{
+  "checks": {
+    "audio_bitrate": true,
+    "audio_channels": true,
+    "audio_codec": true,
+    "audio_duration_within_one_frame": true,
+    "audio_present": true,
+    "audio_sample_rate": true,
+    "audio_start_within_one_frame": true,
+    "duration_within_one_frame": true,
+    "faststart": true,
+    "fps": true,
+    "frame_count": true,
+    "height": true,
+    "pixel_format": true,
+    "video_codec": true,
+    "width": true
+  },
+  "contact_sheet": "final_primary_contact_sheet.png",
+  "contact_sheet_frames": [
+    0,
+    90,
+    180,
+    291,
+    292,
+    293,
+    294,
+    295,
+    358,
+    359
+  ],
+  "file": "yenia_dance_wan22_1080x1920.mp4",
+  "observed": {
+    "audio_bitrate": 193996,
+    "audio_channels": 2,
+    "audio_codec": "aac",
+    "audio_duration_seconds": 15.0,
+    "audio_sample_rate": 48000,
+    "audio_start_seconds": 0.0,
+    "duration_seconds": 15.0,
+    "fps": "24",
+    "frames": 360,
+    "mp4_box_offsets": {
+      "free": 11789,
+      "ftyp": 0,
+      "mdat": 11797,
+      "moov": 32
+    },
+    "pixel_format": "yuv420p",
+    "resolution": [
+      1080,
+      1920
+    ],
+    "video_codec": "h264"
+  },
+  "schema_version": 1,
+  "sha256": "cfb6da44fb10574c8416e3484f337412ab23f9542a07ab7e599985bc26ff427d",
+  "visual_review_required": [
+    "exactly one adult Yenia in every frame",
+    "Yenia face, hair, hoodie, skirt, socks, and sneakers remain stable",
+    "apartment remains stable with no source crowd, exterior, text, logos, or watermark",
+    "hands, feet, limbs, shadows, camera motion, and seam are natural"
+  ]
+}

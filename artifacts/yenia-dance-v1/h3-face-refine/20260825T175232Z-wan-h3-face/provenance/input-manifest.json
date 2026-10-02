@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "path_base": "run_directory",
+  "privacy": "Only relative paths and content hashes are recorded.",
+  "inputs": [
+    {
+      "role": "authoritative_wan_base_and_delivery_audio",
+      "path": "../../wan-animate/20260825T053824Z-yenia-wan/final/yenia_dance_wan22_1080x1920.mp4",
+      "sha256": "cfb6da44fb10574c8416e3484f337412ab23f9542a07ab7e599985bc26ff427d",
+      "frames": 360,
+      "fps": 24
+    },
+    {
+      "role": "h3_identity_picture_1",
+      "path": "../../../../characters/yenia/face.png",
+      "sha256": "17bfef209000a6966063d5d319896b26d8585bd51b5026d7b76c023b8b2e6e90"
+    },
+    {
+      "role": "h3_appearance_picture_2",
+      "path": "../../wan-animate/20260825T053824Z-yenia-wan/inputs/yenia_appearance_anchor.png",
+      "sha256": "9728c986d07d3e6399caf4f6961fb496ff9f432e27d059fcf469a1ca0b10cef6"
+    },
+    {
+      "role": "h3_full_video_1",
+      "path": "inputs/wan_base_362_576x1024.mp4",
+      "sha256": "ebb1c081947c4fedc2c5fad89f3b90f02790d9dbddf296fef86c99d6b4fd39dc",
+      "frames": 362,
+      "fps": 24,
+      "resolution": [576, 1024],
+      "derivation": "Wan frames 0-359 scaled to the proven H3 canvas plus two cloned tail frames"
+    },
+    {
+      "role": "h3_probe_video_1",
+      "path": "inputs/wan_probe_f210_333_124f.mp4",
+      "sha256": "2f164fab610476e1d2af7a21ff541558f8b03c1feebce42e8aab4bf019147cc8",
+      "frames": 124,
+      "fps": 24,
+      "source_frame_range": [210, 333]
+    },
+    {
+      "role": "h3_prompt",
+      "path": "prompts/h3_wan_face_refine.txt",
+      "sha256": "cf0b88cf5f5bf688b9a924010923a7467cc04d88ff1576cacc45f5834091fc0b"
+    }
+  ]
+}

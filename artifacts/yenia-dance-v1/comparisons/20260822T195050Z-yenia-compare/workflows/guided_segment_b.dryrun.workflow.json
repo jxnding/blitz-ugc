@@ -1,0 +1,244 @@
+{
+  "1": {
+    "class_type": "VHS_LoadVideoPath",
+    "inputs": {
+      "custom_height": 1024,
+      "custom_width": 576,
+      "force_rate": 24,
+      "frame_load_cap": 226,
+      "select_every_nth": 1,
+      "skip_first_frames": 0,
+      "video": "input/blitz-motion/20260822T195050Z-yenia-compare/guided/segment_b.mp4"
+    }
+  },
+  "10": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "denoise": 1.0,
+      "model": [
+        "2",
+        0
+      ],
+      "scheduler": "beta",
+      "steps": 20
+    }
+  },
+  "11": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "guider": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "6",
+        1
+      ],
+      "noise": [
+        "8",
+        0
+      ],
+      "sampler": [
+        "9",
+        0
+      ],
+      "sigmas": [
+        "10",
+        0
+      ]
+    }
+  },
+  "12": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "5",
+        0
+      ]
+    }
+  },
+  "14": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "audio": [
+        "13",
+        0
+      ],
+      "fps": 24,
+      "images": [
+        "12",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "codec": "h264",
+      "codec.encoding": "re-encode",
+      "codec.encoding.crf": 18,
+      "filename_prefix": "blitz-motion/20260822T195050Z-yenia-compare/guided/segment-b/yenia-segment-b-addguide22",
+      "format": "mp4",
+      "video": [
+        "14",
+        0
+      ]
+    }
+  },
+  "2": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "20": {
+    "class_type": "VHS_LoadImagePath",
+    "inputs": {
+      "custom_height": 1024,
+      "custom_width": 576,
+      "image": "input/blitz-motion/20260822T195050Z-yenia-compare/appearance_anchor.png"
+    }
+  },
+  "21": {
+    "class_type": "VHS_LoadImagePath",
+    "inputs": {
+      "custom_height": 1024,
+      "custom_width": 576,
+      "image": "input/blitz-motion/20260822T195050Z-yenia-compare/face.png"
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax"
+    }
+  },
+  "30": {
+    "class_type": "VHS_LoadVideoPath",
+    "inputs": {
+      "custom_height": 1024,
+      "custom_width": 576,
+      "force_rate": 24,
+      "frame_load_cap": 22,
+      "select_every_nth": 1,
+      "skip_first_frames": 0,
+      "video": "input/blitz-motion/20260822T195050Z-yenia-compare/guided/a_overlap22.mkv"
+    }
+  },
+  "31": {
+    "class_type": "MiniMaxH3AddGuide",
+    "inputs": {
+      "frame_idx": 0,
+      "image": [
+        "30",
+        0
+      ],
+      "latent": [
+        "6",
+        1
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "audio_vae": [
+        "5",
+        0
+      ],
+      "clip": [
+        "3",
+        0
+      ],
+      "height": 1024,
+      "length": 226,
+      "prompt": "subject_definitions:\n<Subject 1> is the same original, clearly adult Yenia established by <Picture 1> and <Picture 2>: stable facial geometry and skin tone, a secured black updo with short face-framing wisps, consistent body proportions, gray hoodie, white pleated skirt, white socks, and white sneakers.\n<Subject 2> is Yenia's neutral apartment in <Picture 1>, including the pale wall, couch, wood floor, doorway, soft indoor lighting, and vertical smartphone composition.\n<Picture 1> is the primary Yenia appearance, outfit, apartment, lighting, and composition reference.\n<Picture 2> is the identity close-up for Yenia's facial geometry, adult identity, skin tone, and secured black updo.\n<Video 1> is a rights-cleared temporal reference that supplies only choreography, timing, subject scale and position, and camera motion. Its person's identity, hair, body appearance, clothing, and removed source scenery are excluded.\n<Audio 1> is the synchronized rhythm reference paired with <Video 1>; it supplies beat and timing only.\n\nsummary:\n[keyframe completion + reference generation + audio reference] The target is one continuous photorealistic vertical shot of <Subject 1> dancing alone in <Subject 2>. The first 22 frames are an encoded continuation guide from the accepted preceding segment. After that exact context, the shot follows <Video 1>'s temporal structure and <Audio 1>'s beat without copying any source person or scene.\n\nretention_analysis:\n<Subject 1> (appears throughout [Shot 1]): fully_preserved - Yenia's adult identity, face, secured black updo, body proportions, hoodie, skirt, socks, and sneakers remain unchanged in every frame.\n<Subject 2> (appears throughout [Shot 1]): fully_preserved - the same apartment, lighting, layout, and vertical composition remain stable.\n<Picture 1> (throughout [Shot 1]): fully_preserved - Yenia's appearance, outfit, apartment, and lighting remain the visual target.\n<Picture 2> (throughout [Shot 1]): fully_preserved - Yenia's facial identity and secured updo remain stable across frontal, profile, turning, bending, and motion-blurred views.\n<Video 1> (movement, timing, scale, position, and camera structure): fully_preserved - only its temporal role is retained; its source person's appearance and excluded scenery are never transferred.\n<Audio 1>: reference - its beat and timing guide the dance, while generated audio is discarded.\n\ndetailed_description:\nNatural photorealistic smartphone video with ordinary indoor light, realistic skin and fabric, stable anatomy, and one unbroken camera take.\n[Shot 1] Frames 0 through 21 are the exact encoded continuation context from the accepted preceding Yenia segment. Preserve their face, updo, pose progression, camera scale, apartment, lighting, outfit, and motion without a reset. Frame 22 proceeds naturally from frame 21 and continues the full choreography, rhythm, body orientation, subject position and scale, and camera motion from <Video 1>. Keep exactly one <Subject 1> visible in <Subject 2>. During bends, turns, back-facing spins, and head tosses, the secured black updo stays tied and compact; only its existing short wisps move naturally. Never reproduce the guide person's face, long hair, body identity, clothing, or neutral matte. Keep Yenia's face, age, body identity, gray hoodie, white skirt, socks, sneakers, hands, fingers, legs, feet, fabric, shadows, and occlusions consistent. The derived late bridge is one continuous motion by the same Yenia, not an exit, re-entry, disappearance, cut, or identity handoff. Its final held guide pose remains one visible Yenia through the last frame. Never add another person, partial body, crowd, reflection-person, exterior location, source architecture, banner, TikTok element, text, logo, or watermark.\n\noverall_soundscape:\nNo generated sound is delivered; <Audio 1> is used only as a timing reference during generation.\n\nnon_diegetic_music:\n<Audio 1> provides the exact rhythmic pacing reference; the generated track is discarded and the cleared source soundtrack is restored during final assembly.\n\nCorrection: the previous two-segment assembly changed Yenia's face at the join. Use the encoded 22-frame opening guide as continuous visual history and preserve the identical Yenia face, updo, apartment, pose progression, and camera state when frame 22 begins.",
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "20",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "21",
+        0
+      ],
+      "ref_video_audios.ref_video_audio_0": [
+        "1",
+        2
+      ],
+      "ref_videos.ref_video_0": [
+        "1",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ],
+      "width": 576
+    }
+  },
+  "7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "conditioning": [
+        "31",
+        0
+      ],
+      "model": [
+        "2",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 24082022
+    }
+  },
+  "9": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "res_multistep"
+    }
+  }
+}

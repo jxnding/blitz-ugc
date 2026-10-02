@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "initial_observation": {
+    "captured_before_mutation": true,
+    "utc": "2026-08-21T00:12:14Z",
+    "gpus": [
+      {
+        "name": "NVIDIA GeForce RTX 3090",
+        "assigned_service": "llama-chat"
+      },
+      {
+        "name": "NVIDIA GeForce RTX 2080 Ti",
+        "assigned_service": "llama-embed"
+      }
+    ],
+    "containers": [
+      {
+        "name": "llama-chat",
+        "image": "local/llama.cpp@sha256:5c05553495ec43f324eb5d663e57116dfa291d165a0a85c842fd14917761ceb9",
+        "state": "running",
+        "health": "healthy"
+      },
+      {
+        "name": "llama-embed",
+        "image": "local/llama.cpp@sha256:bcba3ec247601828360cc3f0bd0c7a3fe11c1a818fcf3c06caf8385c103c0657",
+        "state": "running",
+        "health": "healthy"
+      }
+    ]
+  },
+  "generation_state": {
+    "llama_chat": "stopped for the approved RTX 3090 allocation",
+    "llama_embed": "left running and healthy on the RTX 2080 Ti",
+    "comfyui": {
+      "binding": "localhost only",
+      "gpu": "NVIDIA GeForce RTX 3090",
+      "git_commit": "a7365071e47175fb06572d0a56d1bf4116c2f581"
+    }
+  },
+  "reconnection_observation": {
+    "utc": "2026-08-21T20:47:33Z",
+    "server_rebooted_during_network_outage": false,
+    "comfyui_queue_empty": true,
+    "take_2_segment_b_completed": true,
+    "bounded_retry_segment_b_completed": true,
+    "duplicate_submission_performed": false,
+    "llama_embed_remained_healthy": true
+  },
+  "restoration": {
+    "started_utc": "2026-08-21T20:58:55Z",
+    "verified_utc": "2026-08-21T20:59:50Z",
+    "queue_empty_before_stop": true,
+    "comfyui_process_verified": true,
+    "comfyui_pid": 474412,
+    "comfyui_binding": "localhost only",
+    "comfyui_stopped": true,
+    "llama_chat_restarted": true,
+    "llama_chat_container_health": "healthy",
+    "llama_chat_http_health": "healthy",
+    "llama_embed_container_health": "healthy",
+    "llama_embed_http_health": "healthy"
+  }
+}

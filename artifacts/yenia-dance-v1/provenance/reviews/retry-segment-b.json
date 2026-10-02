@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "attempt": "bounded-segment-b-retry",
+  "seed": 24082032,
+  "output": "runs/retry/segment-b/yenia-segment-b_00001_.mp4",
+  "output_sha256": "15c3e455e1cf66b23a87835449221e72fa841f802ce8b1298139985e089c43c9",
+  "frames": 209,
+  "fps": 24,
+  "resolution": [
+    576,
+    1024
+  ],
+  "review_scope": "every output frame plus enlarged frames 0-15, spin and hair frames 120-180, overlap with Take 2 Segment A frames 218-225, and final frames 192-208",
+  "visual_gate": "reject",
+  "failure": "Yenia's secured black updo unravels into long loose hair during the back-facing spin and head toss, then remains visibly loose.",
+  "checks": {
+    "exactly_one_adult_yenia": true,
+    "identity_face_stable": true,
+    "secured_updo_stable": false,
+    "hoodie_skirt_socks_and_sneakers_stable": true,
+    "apartment_stable": true,
+    "no_source_crowd_exterior_text_logo_or_watermark": true,
+    "hands_feet_limbs_and_occlusion_acceptable": true,
+    "no_exit_cut_disappearance_or_camera_jump": true
+  },
+  "decision": "Reject and do not generate a fourth attempt. Use Take 2 Segment B, which passes the hairstyle and one-person continuity gates."
+}

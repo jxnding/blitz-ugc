@@ -1,0 +1,95 @@
+{
+  "artifacts": {
+    "generated_files": [
+      "raw/full/yenia_animate2_full_seed24082611(2).mp4",
+      "raw/full/yenia_animate2_full_seed24082611(3).mp4",
+      "raw/full/yenia_animate2_full_seed24082611(4).mp4",
+      "raw/full/yenia_animate2_full_seed24082611(5).mp4",
+      "raw/full/yenia_animate2_full_seed24082611(6).mp4",
+      "raw/full/yenia_animate2_full_seed24082611.mp4"
+    ],
+    "log": "logs/full.run.log",
+    "output_dir": "raw/full",
+    "settings": "settings/full.json"
+  },
+  "completed_at": "2026-08-25T19:42:47Z",
+  "direct_inputs_only": true,
+  "dry_run": false,
+  "excluded_inputs": [
+    "pose video",
+    "face-crop video",
+    "source crowd RGB",
+    "preprocessing model"
+  ],
+  "input_roles": {
+    "character_image": {
+      "path": "inputs/yenia_appearance_anchor.png",
+      "role": "identity, face, hair, outfit, and apartment",
+      "sha256": "9728c986d07d3e6399caf4f6961fb496ff9f432e27d059fcf469a1ca0b10cef6"
+    },
+    "driving_video": {
+      "fps": "24",
+      "frames": 361,
+      "path": "inputs/motion_guide_361_padded.mkv",
+      "role": "choreography, expression timing, framing, and camera motion only",
+      "sha256": "f302f72784335dc6155529e63af9cdee5fc345723db7ca5d126d46442f7c8679"
+    }
+  },
+  "model": {
+    "checkpoint": "wan2.2_animate2_14B_distilled_int8_convrot.safetensors",
+    "checkpoint_bytes": 17025886450,
+    "checkpoint_sha256": "f03ff1ea9642522c88251dfaf18012942de8c25c3ebdce835c65dda3a5249b7c",
+    "model_type": "animate2_distilled",
+    "preset": "animate2_distilled.json",
+    "wan_gp_commit": "f76ef2bb848a7d6bfc94779d493b2a9f149cd683"
+  },
+  "prompts": {
+    "driving": "Use the isolated person and temporal sequence in the driving video only to transfer choreography, body timing, facial-expression timing, full-body framing, subject scale, rhythm, and camera movement to Yenia. The flat gray pixels surrounding the isolated person are segmentation placeholders, not a location, wall, floor, or color reference, and must never appear in the result. Keep Yenia continuously inside the apartment from the character image. Preserve exactly one adult Yenia through every turn, occlusion, fast movement, and the late source-performer handoff; she never exits, changes identity, or becomes a second person.",
+    "main": "One clearly adult original virtual character named Yenia, and no other person. Preserve Yenia's consistent face with almond-shaped brown eyes, straight brows, natural nose and lips, warm light-medium skin, and realistic facial detail. Her black hair is secured in the same compact updo with only short loose wisps. She wears the same oversized gray hoodie, white pleated skirt, white socks, and clean white sneakers. Keep her realistic proportions, hands, and feet. Keep the full-body vertical composition inside the same warm modern apartment shown in the character image, with the same pale walls, wood floor, soft neutral furnishings, natural indoor light, colors, and spatial layout. Her identity, hair, clothing, and apartment remain unchanged throughout the continuous shot.",
+    "negative": "gray matte, gray background, flat gray field, segmentation background, outdoor scene, street, crowd, extra person, second dancer, duplicate person, reflection person, source performer face, red shirt, polka-dot clothing, source clothing, identity swap, face drift, age drift, long loose hair, hairstyle change, outfit change, apartment change, disappearing character, body handoff, cut, restart, camera jump, text, caption, logo, watermark, TikTok interface, banner, blurry face, deformed face, unstable eyes, extra limbs, missing limbs, fused fingers, extra fingers, deformed hands, deformed feet, broken anatomy, flicker, low quality"
+  },
+  "runtime": {
+    "attention": "sdpa",
+    "elapsed_seconds": 2551.376,
+    "exit_code": 0,
+    "gpu_binding": "CUDA_VISIBLE_DEVICES by GPU UUID; WanGP sees cuda:0",
+    "gpu_model": "NVIDIA GeForce RTX 3090",
+    "peak_gpu_vram_mib": 19504,
+    "peak_host_ram_mib": 24542,
+    "profile": 3,
+    "python": "python",
+    "versions": {
+      "cuda": "13.0",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.12.0",
+      "torch": "2.10.0+cu130"
+    }
+  },
+  "schema_version": 1,
+  "settings": {
+    "custom_settings": {
+      "animate2_kv_cache": "Disabled"
+    },
+    "flow_shift": 5.0,
+    "force_fps": "control",
+    "guidance_scale": 1.0,
+    "image_prompt_type": "S",
+    "model_type": "animate2_distilled",
+    "num_inference_steps": 10,
+    "output_filename": "yenia_animate2_full_seed24082611.mp4",
+    "override_attention": "sdpa",
+    "override_profile": 3,
+    "prompt_enhancer": "",
+    "remove_background_images_ref": 0,
+    "repeat_generation": 1,
+    "resolution": "480x832",
+    "sample_solver": "euler",
+    "seed": 24082611,
+    "sliding_window_overlap": 1,
+    "sliding_window_size": 65,
+    "video_length": 361,
+    "video_prompt_type": "UV"
+  },
+  "started_at": "2026-08-25T19:00:16Z",
+  "status": "success"
+}

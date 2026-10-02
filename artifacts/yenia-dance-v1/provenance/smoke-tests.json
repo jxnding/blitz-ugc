@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "direct_h3_probe": {
+    "motion_reference": "inputs/smoke_ending.mp4",
+    "output": "runs/smoke-576/yenia-smoke_00001_.mp4",
+    "output_sha256": "190ec5b78fa480865e6b585bb531094c4389f813fc9fbf9aefcea3942690b35f",
+    "seed": 24082001,
+    "resolution": [576, 1024],
+    "frames": 124,
+    "steps": 12,
+    "technical_gate": "pass",
+    "visual_gate": "reject",
+    "reasons": [
+      "multiple source-background dancers were reproduced",
+      "the exterior building and driveway were reproduced",
+      "the scene snapped back to the apartment near the ending",
+      "Yenia was not the sole continuous character"
+    ]
+  },
+  "isolation_fallback": {
+    "triggered": true,
+    "tool": "SAM 2.1",
+    "repository_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "checkpoint": "sam2.1_hiera_small.pt",
+    "checkpoint_sha256": "6d1aa6f30de5c92224f8172114de081d104bbd23dd9dc5c58996f0cad5dc4d38",
+    "guide": "runs/sam2-attempt-3/isolated_active_reference.mp4",
+    "guide_sha256": "96d81d98e3b3227ec32dfe78ea298301df149854fb385e9822f75fdb5343a624",
+    "frames": 430,
+    "fps": 24,
+    "visual_gate": "pass-with-recorded-empty-tail",
+    "empty_tail_frames": 18,
+    "notes": "All non-empty guide frames contain one tracked cutout on a neutral matte; the source foreground subject has already left during the recorded empty tail."
+  },
+  "isolated_h3_probe": {
+    "motion_reference": "inputs/isolated/smoke_ending.mp4",
+    "output": "runs/smoke-isolated/yenia-smoke-isolated_00001_.mp4",
+    "output_sha256": "6e8a0a4cec5e1a2d1e34e7cdcce0ddaff2ec3d120c171a4c5682bf67132f94b9",
+    "seed": 24082001,
+    "resolution": [576, 1024],
+    "frames": 124,
+    "steps": 12,
+    "technical_gate": "pass",
+    "visual_gate": "reject",
+    "reasons": [
+      "Yenia exited frame right during the final movement",
+      "the last approximately 18 frames showed the empty apartment"
+    ]
+  },
+  "tail_hold_correction": {
+    "source_guide": "runs/sam2-attempt-3/isolated_active_reference.mp4",
+    "corrected_guide": "runs/sam2-attempt-3/isolated_active_reference_tailhold.mp4",
+    "corrected_guide_sha256": "c18be1cb3b8183266175502b50f4a3568883f7131971ae9d91543b44042200f8",
+    "preserved_frames": [0, 410],
+    "held_source_frame": 410,
+    "held_output_frames": [411, 429],
+    "reason": "preserve the sole character through the ending instead of inheriting the source subject's exit",
+    "tailhold_h3_probe": {
+      "motion_reference": "inputs/isolated-tailhold/smoke_ending.mp4",
+      "output": "runs/smoke-tailhold/yenia-smoke-tailhold_00001_.mp4",
+      "output_sha256": "32349ea33fe18c57dd0d1f53866fc6d3efa64a426dcf27c1f4b39516370bfa72",
+      "seed": 24082001,
+      "resolution": [576, 1024],
+      "frames": 124,
+      "steps": 12,
+      "technical_gate": "pass",
+      "visual_gate": "reject",
+      "reasons": [
+        "the model amplified source frames 389-395 with no isolated subject into an earlier exit and re-entry",
+        "several frames showed the empty apartment before Yenia reappeared"
+      ]
+    }
+  },
+  "handoff_stabilization": {
+    "input_guide": "runs/sam2-attempt-3/isolated_active_reference_tailhold.mp4",
+    "corrected_guide": "runs/sam2-attempt-3/isolated_active_reference_stabilized.mp4",
+    "corrected_guide_sha256": "ec9f2ebe56ff31a3c4934795ffe3d022f94f5da021c40db868296bc72e9d18f6",
+    "bridge_source_frame": 377,
+    "bridge_output_frames": [378, 395],
+    "target_frame": 396,
+    "method": "one cutout only; eased scale and position; no blend and no empty frames",
+    "stabilized_h3_probe": {
+      "motion_reference": "inputs/isolated-stabilized/smoke_ending.mp4",
+      "output": "runs/smoke-stabilized/yenia-smoke-stabilized_00001_.mp4",
+      "output_sha256": "562cbd7e303a3f0d1b2679c67134ca5afd51deba5b30cf1a27cfc070e792339f",
+      "seed": 24082001,
+      "resolution": [576, 1024],
+      "frames": 124,
+      "steps": 12,
+      "technical_gate": "pass",
+      "visual_gate": "pass",
+      "review": [
+        "every frame contains exactly one Yenia",
+        "identity, hoodie outfit, and apartment remain stable",
+        "the handoff becomes a continuous pullback and recenter without an empty frame",
+        "no source crowd, exterior, text, logo, banner, or watermark appears"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "captured_at_utc": "2026-08-25T07:09:00Z",
+  "comfyui_started_by_run": true,
+  "comfyui_pid_stopped": true,
+  "services": [
+    {
+      "name": "llama-chat",
+      "status": "running",
+      "health": "ok",
+      "gpu": "RTX 3090",
+      "gpu_memory_mib": 16728
+    },
+    {
+      "name": "llama-embed",
+      "status": "running",
+      "health": "ok",
+      "gpu": "RTX 2080 Ti",
+      "gpu_memory_mib": 9710
+    }
+  ]
+}

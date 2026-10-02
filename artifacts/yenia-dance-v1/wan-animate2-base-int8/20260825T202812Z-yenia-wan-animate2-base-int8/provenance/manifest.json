@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "run_id": "20260825T202812Z-yenia-wan-animate2-base-int8",
+  "status": "smoke_rejected",
+  "rights_status": "user_confirmed_for_the_existing_motion_and_audio_range",
+  "full_generation_submitted": false,
+  "model": {
+    "type": "animate2",
+    "variant": "base_int8",
+    "checkpoint": "wan2.2_animate2_14B_int8_convrot.safetensors",
+    "checkpoint_sha256": "18a34170853924a5bff1f16a37da33d9abb4686609c25ab27d657d6ebce5d0a3",
+    "wangp_commit": "f76ef2bb848a7d6bfc94779d493b2a9f149cd683"
+  },
+  "inputs": [
+    {
+      "path": "inputs/yenia_appearance_anchor.png",
+      "sha256": "9728c986d07d3e6399caf4f6961fb496ff9f432e27d059fcf469a1ca0b10cef6",
+      "role": "identity_outfit_and_apartment"
+    },
+    {
+      "path": "inputs/motion_guide_smoke_f216_280_65.mkv",
+      "sha256": "1317ecdb7583cc680ef9398d8bbcdec7f4c3fa5d5e90ae18266508a2ed12fb17",
+      "role": "direct_driving_video_frames_216_to_280"
+    }
+  ],
+  "settings": {
+    "frames": 65,
+    "fps": 24,
+    "requested_resolution": "480x832",
+    "observed_resolution": "480x848",
+    "seed": 24082601,
+    "steps": 40,
+    "solver": "dpm++",
+    "guidance": 3.0,
+    "flow_shift": 5.0,
+    "profile": 3,
+    "kv_cache": "disabled",
+    "image_prompt_type": "S",
+    "video_prompt_type": "UV"
+  },
+  "outputs": [
+    {
+      "path": "raw/smoke/yenia_animate2_base_int8_smoke_seed24082601.mp4",
+      "sha256": "67b1f0392d4711622dde42073cc5506e4bc79a060139b00e3ddc96306b7e78eb",
+      "frames": 65
+    },
+    {
+      "path": "final/distilled_left_vs_base_int8_right_smoke.mp4",
+      "sha256": "9cb5a62de7c47360d4f310dc7d499c4e4156d38bbb2181706420961f9a063659",
+      "frames": 65
+    }
+  ],
+  "qa": {
+    "result": "rejected",
+    "review": "qa/smoke-review.json",
+    "all_frames": "qa/base_int8_all65_full.png",
+    "comparison": "qa/distilled_left_base_right_9frame_pairs.png"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "run_id": "20260825T053824Z-yenia-wan",
+  "character": "Yenia",
+  "character_is_adult": true,
+  "one_person_only": true,
+  "target_scene": "Yenia's apartment",
+  "inputs": [
+    {
+      "role": "identity_and_scene",
+      "path": "inputs/yenia_appearance_anchor.png",
+      "sha256": "9728c986d07d3e6399caf4f6961fb496ff9f432e27d059fcf469a1ca0b10cef6",
+      "dimensions": "941x1672"
+    },
+    {
+      "role": "motion_and_timing_only",
+      "path": "inputs/source_dance.mp4",
+      "sha256": "8f5011accef0b5be61618d8bd845c63add3b007c4fb640f246a6b4ad682d2913",
+      "dimensions": "576x1024",
+      "fps": 24,
+      "source_frames": 526,
+      "active_target_frames": 360
+    }
+  ],
+  "excluded_source_roles": [
+    "identity",
+    "clothing",
+    "background",
+    "text",
+    "watermark"
+  ]
+}

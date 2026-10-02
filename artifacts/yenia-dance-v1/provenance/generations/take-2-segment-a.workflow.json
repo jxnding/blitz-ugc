@@ -1,0 +1,210 @@
+{
+  "1": {
+    "class_type": "VHS_LoadVideoPath",
+    "inputs": {
+      "custom_height": 1024,
+      "custom_width": 576,
+      "force_rate": 24,
+      "frame_load_cap": 226,
+      "select_every_nth": 1,
+      "skip_first_frames": 0,
+      "video": "input/blitz-motion/20260821T001214Z-yenia-dance/isolated-stabilized/segment_a.mp4"
+    }
+  },
+  "10": {
+    "class_type": "BasicScheduler",
+    "inputs": {
+      "denoise": 1.0,
+      "model": [
+        "2",
+        0
+      ],
+      "scheduler": "beta",
+      "steps": 20
+    }
+  },
+  "11": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "guider": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "6",
+        1
+      ],
+      "noise": [
+        "8",
+        0
+      ],
+      "sampler": [
+        "9",
+        0
+      ],
+      "sigmas": [
+        "10",
+        0
+      ]
+    }
+  },
+  "12": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "VAEDecodeAudio",
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "5",
+        0
+      ]
+    }
+  },
+  "14": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "audio": [
+        "13",
+        0
+      ],
+      "fps": 24,
+      "images": [
+        "12",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "codec": "h264",
+      "codec.encoding": "re-encode",
+      "codec.encoding.crf": 18,
+      "filename_prefix": "blitz-motion/20260821T001214Z-yenia-dance/take-2/segment-a/yenia-segment-a",
+      "format": "mp4",
+      "video": [
+        "14",
+        0
+      ]
+    }
+  },
+  "2": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "20": {
+    "class_type": "VHS_LoadImagePath",
+    "inputs": {
+      "custom_height": 1024,
+      "custom_width": 576,
+      "image": "input/blitz-motion/20260821T001214Z-yenia-dance/yenia_h3_appearance_anchor.png"
+    }
+  },
+  "21": {
+    "class_type": "VHS_LoadImagePath",
+    "inputs": {
+      "custom_height": 1024,
+      "custom_width": 576,
+      "image": "input/blitz-motion/20260821T001214Z-yenia-dance/face.png"
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "audio_vae": [
+        "5",
+        0
+      ],
+      "clip": [
+        "3",
+        0
+      ],
+      "height": 1024,
+      "length": 226,
+      "prompt": "<Picture 1> is the exact Yenia appearance and apartment reference. Preserve the same original adult Yenia's face, black updo and loose hair wisps, body proportions, gray hoodie, white pleated skirt, white socks, white sneakers, neutral apartment, indoor lighting, and vertical composition throughout.\n<Picture 2> is an identity close-up of the same Yenia. Use it only to stabilize her facial geometry, adult identity, skin tone, and hair.\n<Video 1> is a rights-cleared temporal guide only. Follow its single central foreground dance subject's body movement, rhythm, timing, scale, and camera motion. Do not copy any source face, body identity, hair, clothing, crowd, outdoor location, architecture, banner, logo, text, or watermark.\n<Audio 1> is the paired rights-cleared rhythm reference. Follow its beat and timing; generated audio will be discarded.\nGenerate exactly one continuous adult Yenia dancing alone in her apartment. Never add a second person, partial body, background crowd, reflection-person, exterior element, text, logo, or watermark. Keep face, hair, outfit, apartment, hands, fingers, feet, legs, fabric, occlusion, shadows, and camera movement realistic and temporally stable. No cuts, morphs, identity swap, outfit change, background replacement, exit, or camera jump.",
+      "ref_image_size": "match",
+      "ref_images.ref_image_0": [
+        "20",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "21",
+        0
+      ],
+      "ref_video_audios.ref_video_audio_0": [
+        "1",
+        2
+      ],
+      "ref_videos.ref_video_0": [
+        "1",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ],
+      "width": 576
+    }
+  },
+  "7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "conditioning": [
+        "6",
+        0
+      ],
+      "model": [
+        "2",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 24082021
+    }
+  },
+  "9": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "res_multistep"
+    }
+  }
+}

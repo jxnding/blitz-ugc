@@ -1,0 +1,30 @@
+subject_definitions:
+<Subject 1> is the same original, clearly adult Yenia established by <Picture 1> and <Picture 2>: stable facial geometry and skin tone, a secured black updo with short face-framing wisps, consistent body proportions, gray hoodie, white pleated skirt, white socks, and white sneakers.
+<Subject 2> is Yenia's neutral apartment in <Picture 1>, including the pale wall, couch, wood floor, doorway, soft indoor lighting, and vertical smartphone composition.
+<Picture 1> is the primary Yenia appearance, outfit, apartment, lighting, and composition reference.
+<Picture 2> is the identity close-up for Yenia's facial geometry, adult identity, skin tone, and secured black updo.
+<Video 1> is a rights-cleared temporal reference that supplies only choreography, timing, subject scale and position, and camera motion. Its person's identity, hair, body appearance, clothing, and removed source scenery are excluded.
+<Audio 1> is the synchronized rhythm reference paired with <Video 1>; it supplies beat and timing only.
+
+summary:
+[keyframe completion + reference generation + audio reference] The target is one continuous photorealistic vertical shot of <Subject 1> dancing alone in <Subject 2>. The first 22 frames are an encoded continuation guide from the accepted preceding segment. After that exact context, the shot follows <Video 1>'s temporal structure and <Audio 1>'s beat without copying any source person or scene.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - Yenia's adult identity, face, secured black updo, body proportions, hoodie, skirt, socks, and sneakers remain unchanged in every frame.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - the same apartment, lighting, layout, and vertical composition remain stable.
+<Picture 1> (throughout [Shot 1]): fully_preserved - Yenia's appearance, outfit, apartment, and lighting remain the visual target.
+<Picture 2> (throughout [Shot 1]): fully_preserved - Yenia's facial identity and secured updo remain stable across frontal, profile, turning, bending, and motion-blurred views.
+<Video 1> (movement, timing, scale, position, and camera structure): fully_preserved - only its temporal role is retained; its source person's appearance and excluded scenery are never transferred.
+<Audio 1>: reference - its beat and timing guide the dance, while generated audio is discarded.
+
+detailed_description:
+Natural photorealistic smartphone video with ordinary indoor light, realistic skin and fabric, stable anatomy, and one unbroken camera take.
+[Shot 1] Frames 0 through 21 are the exact encoded continuation context from the accepted preceding Yenia segment. Preserve their face, updo, pose progression, camera scale, apartment, lighting, outfit, and motion without a reset. Frame 22 proceeds naturally from frame 21 and continues the full choreography, rhythm, body orientation, subject position and scale, and camera motion from <Video 1>. Keep exactly one <Subject 1> visible in <Subject 2>. During bends, turns, back-facing spins, and head tosses, the secured black updo stays tied and compact; only its existing short wisps move naturally. Never reproduce the guide person's face, long hair, body identity, clothing, or neutral matte. Keep Yenia's face, age, body identity, gray hoodie, white skirt, socks, sneakers, hands, fingers, legs, feet, fabric, shadows, and occlusions consistent. The derived late bridge is one continuous motion by the same Yenia, not an exit, re-entry, disappearance, cut, or identity handoff. Its final held guide pose remains one visible Yenia through the last frame. Never add another person, partial body, crowd, reflection-person, exterior location, source architecture, banner, TikTok element, text, logo, or watermark.
+
+overall_soundscape:
+No generated sound is delivered; <Audio 1> is used only as a timing reference during generation.
+
+non_diegetic_music:
+<Audio 1> provides the exact rhythmic pacing reference; the generated track is discarded and the cleared source soundtrack is restored during final assembly.
+
+Correction: the previous two-segment assembly changed Yenia's face at the join. Use the encoded 22-frame opening guide as continuous visual history and preserve the identical Yenia face, updo, apartment, pose progression, and camera state when frame 22 begins.

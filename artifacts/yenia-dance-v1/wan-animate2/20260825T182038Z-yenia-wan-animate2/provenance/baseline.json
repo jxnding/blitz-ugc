@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "rights": {
+    "character": "original adult virtual character",
+    "driving_visuals": "cleared for choreography, timing, expression timing, framing, and camera motion",
+    "audio": "cleared source audio, frames 0-359",
+    "excluded_source_content": [
+      "source face",
+      "source clothing",
+      "crowd",
+      "exterior scene",
+      "text",
+      "logos",
+      "watermarks"
+    ]
+  },
+  "inputs": {
+    "character_image": {
+      "path": "inputs/yenia_appearance_anchor.png",
+      "sha256": "9728c986d07d3e6399caf4f6961fb496ff9f432e27d059fcf469a1ca0b10cef6"
+    },
+    "driving_video_360": {
+      "path": "inputs/motion_guide_360.mkv",
+      "sha256": "9668bddb5f70c58a3c98415b1d89fbc27e72b1ec3199d7b273e822a53a5cba27",
+      "frames": 360,
+      "fps": 24
+    },
+    "driving_smoke": {
+      "path": "inputs/motion_guide_smoke_f216_280_65.mkv",
+      "sha256": "1317ecdb7583cc680ef9398d8bbcdec7f4c3fa5d5e90ae18266508a2ed12fb17",
+      "source_frames": [216, 280],
+      "frames": 65,
+      "fps": 24
+    },
+    "driving_full_padded": {
+      "path": "inputs/motion_guide_361_padded.mkv",
+      "sha256": "f302f72784335dc6155529e63af9cdee5fc345723db7ca5d126d46442f7c8679",
+      "frames": 361,
+      "padding": "one cloned final frame"
+    },
+    "audio_source": {
+      "path": "inputs/source_dance.mp4",
+      "sha256": "8f5011accef0b5be61618d8bd845c63add3b007c4fb640f246a6b4ad682d2913"
+    }
+  },
+  "character_asset_baseline": {
+    "characters/yenia/face.png": "17bfef209000a6966063d5d319896b26d8585bd51b5026d7b76c023b8b2e6e90",
+    "characters/yenia/face_profile.png": "ddd68d16a3aa7e707bc10f39994f58ca2e4f2c8f063c9569b0b022aad7763422",
+    "characters/yenia/face_expressions.png": "cec3dd8460581eca6bb7db191e14219b60de60568a22c39cecdc4e7725212250",
+    "characters/yenia/outfits.png": "4c57f4bc30d0eae45814bd62c6aec2b4d459aad314214c05b2dd625e6a4333bc"
+  },
+  "initial_server_state": {
+    "llama_embed": "running and healthy on RTX 2080 Ti",
+    "llama_chat": "stopped by user request",
+    "superseded_h3": "active on RTX 3090, then exact prompt interrupted and exact recorded ComfyUI PID stopped",
+    "post_interrupt_rtx_3090_memory_mib": 33,
+    "post_interrupt_rtx_3090_utilization_percent": 0
+  },
+  "privacy": {
+    "contains_server_address": false,
+    "contains_password": false,
+    "contains_tokens": false,
+    "contains_absolute_user_paths": false
+  }
+}

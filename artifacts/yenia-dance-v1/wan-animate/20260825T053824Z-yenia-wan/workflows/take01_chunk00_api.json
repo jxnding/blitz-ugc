@@ -1,0 +1,231 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "Wan2_2-Animate-14B_fp8_scaled_e4m3fn_KJ_v2.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "10": {
+    "class_type": "CLIPVisionEncode",
+    "inputs": {
+      "clip_vision": [
+        "8",
+        0
+      ],
+      "crop": "none",
+      "image": [
+        "9",
+        0
+      ]
+    }
+  },
+  "11": {
+    "class_type": "LoadVideo",
+    "inputs": {
+      "file": "blitz_wan_20260825_full_vitpose_365.mkv"
+    }
+  },
+  "12": {
+    "class_type": "GetVideoComponents",
+    "inputs": {
+      "video": [
+        "11",
+        0
+      ]
+    }
+  },
+  "2": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "lora_name": "lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+      "model": [
+        "1",
+        0
+      ],
+      "strength_model": 1.0
+    }
+  },
+  "20": {
+    "class_type": "WanAnimateToVideo",
+    "inputs": {
+      "batch_size": 1,
+      "clip_vision_output": [
+        "10",
+        0
+      ],
+      "continue_motion_max_frames": 5,
+      "height": 832,
+      "length": 77,
+      "negative": [
+        "6",
+        0
+      ],
+      "pose_video": [
+        "12",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "reference_image": [
+        "9",
+        0
+      ],
+      "vae": [
+        "7",
+        0
+      ],
+      "video_frame_offset": 0,
+      "width": 480
+    }
+  },
+  "21": {
+    "class_type": "KSampler",
+    "inputs": {
+      "cfg": 1.0,
+      "denoise": 1.0,
+      "latent_image": [
+        "20",
+        2
+      ],
+      "model": [
+        "3",
+        0
+      ],
+      "negative": [
+        "20",
+        1
+      ],
+      "positive": [
+        "20",
+        0
+      ],
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "seed": 24082201,
+      "steps": 6
+    }
+  },
+  "22": {
+    "class_type": "TrimVideoLatent",
+    "inputs": {
+      "samples": [
+        "21",
+        0
+      ],
+      "trim_amount": [
+        "20",
+        3
+      ]
+    }
+  },
+  "23": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "22",
+        0
+      ],
+      "vae": [
+        "7",
+        0
+      ]
+    }
+  },
+  "24": {
+    "class_type": "ImageFromBatch",
+    "inputs": {
+      "batch_index": [
+        "20",
+        4
+      ],
+      "image": [
+        "23",
+        0
+      ],
+      "length": 4096
+    }
+  },
+  "25": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "fps": 24.0,
+      "images": [
+        "24",
+        0
+      ]
+    }
+  },
+  "26": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "codec": "h264",
+      "codec.encoding": "re-encode",
+      "codec.encoding.crf": 18,
+      "filename_prefix": "blitz_wan/take01_chunk00",
+      "format": "mp4",
+      "video": [
+        "25",
+        0
+      ]
+    }
+  },
+  "3": {
+    "class_type": "ModelSamplingSD3",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "shift": 8.0
+    }
+  },
+  "4": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "device": "default",
+      "type": "wan"
+    }
+  },
+  "5": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "4",
+        0
+      ],
+      "text": "A realistic vertical full-body video of exactly one clearly adult virtual woman, Yenia, dancing alone in the same warm beige apartment shown in the reference image. Preserve Yenia's exact face, compact dark-brown updo, body proportions, oversized gray hoodie, white pleated skirt, white socks, and white sneakers throughout. Follow the supplied pose sequence precisely for body movement, rhythm, scale, position, and timing while keeping Yenia's appearance and apartment composition stable. One continuous clean natural shot, coherent lighting and shadows, realistic hands, fingers, legs, feet, fabric, and occlusions, temporally consistent face and hair."
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "4",
+        0
+      ],
+      "text": "multiple people, second person, extra person, partial person, reflection person, crowd, outdoor scene, exterior, street, stage, gray matte, gray background, blank background, source dancer appearance, red shirt, polka dots, jeans, long loose hair, face morph, identity change, identity handoff, age change, hairstyle change, outfit change, apartment change, cut, edit, camera jump, flicker, frozen frame, text, subtitle, banner, logo, watermark, TikTok interface, extra limbs, missing limbs, fused fingers, extra fingers, malformed hands, malformed feet, distorted face, blurry face, low quality, jpeg artifacts, oversaturated, overexposed"
+    }
+  },
+  "7": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "wan_2.1_vae.safetensors"
+    }
+  },
+  "8": {
+    "class_type": "CLIPVisionLoader",
+    "inputs": {
+      "clip_name": "clip_vision_h.safetensors"
+    }
+  },
+  "9": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "blitz_wan_20260825_yenia_anchor.png"
+    }
+  }
+}

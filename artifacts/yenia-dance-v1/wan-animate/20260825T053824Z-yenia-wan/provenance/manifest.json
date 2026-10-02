@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "run_id": "20260825T053824Z-yenia-wan",
+  "status": "complete_with_recorded_hair-motion_limitation",
+  "rights": {
+    "source_visuals_cleared": true,
+    "source_audio_cleared": true,
+    "confirmed_by": "user",
+    "source_roles_allowed": [
+      "choreography",
+      "timing",
+      "scale_and_position",
+      "camera_motion",
+      "audio"
+    ],
+    "source_roles_excluded": [
+      "identity",
+      "face",
+      "clothing",
+      "background",
+      "text",
+      "watermark"
+    ]
+  },
+  "inputs": [
+    {
+      "role": "identity_outfit_scene",
+      "path": "inputs/yenia_appearance_anchor.png",
+      "sha256": "9728c986d07d3e6399caf4f6961fb496ff9f432e27d059fcf469a1ca0b10cef6"
+    },
+    {
+      "role": "cleared_source_motion_and_audio",
+      "path": "inputs/source_dance.mp4",
+      "sha256": "8f5011accef0b5be61618d8bd845c63add3b007c4fb640f246a6b4ad682d2913"
+    },
+    {
+      "role": "isolated_motion_preprocessing_source",
+      "path": "inputs/motion_guide_360.mkv",
+      "sha256": "9668bddb5f70c58a3c98415b1d89fbc27e72b1ec3199d7b273e822a53a5cba27",
+      "frames": 360
+    }
+  ],
+  "controls": {
+    "selected": {
+      "path": "controls/full_vitpose_360.mkv",
+      "sha256": "d3b44b48b4b682be113edfb88603e25cf36ddf49e82437ae2e898bb236e716fc",
+      "extractor": "Wan official ViTPose-H WholeBody",
+      "frames": 360,
+      "fps": 24,
+      "dimensions": [
+        480,
+        832
+      ],
+      "missing_detections": 0,
+      "pose_retargeting": false
+    },
+    "padded_for_continuation": {
+      "path": "controls/full_vitpose_365_padded.mkv",
+      "sha256": "f7216a6a91b7f8974e338573f2af0a3f28c7b7535e899764104df7a732c874f6",
+      "frames": 365,
+      "tail_frames_cloned": 5,
+      "tail_frames_delivered": 0
+    },
+    "face_conditioning": null,
+    "face_conditioning_reason": "Wan expects RGB face crops; source face crops were excluded to prevent identity leakage. DWPose face landmarks were retained only as diagnostics."
+  },
+  "software": {
+    "comfyui_commit": "a7365071e47175fb06572d0a56d1bf4116c2f581",
+    "comfyui_version": "0.33.0",
+    "wan_code_commit": "42bf4cfaa384bc21833865abc2f9e6c0e67233dc",
+    "wan_process_model_revision": "cb93a225fbaf1ca100f54e79da8f994995b689b3"
+  },
+  "models": [
+    {
+      "filename": "Wan2_2-Animate-14B_fp8_scaled_e4m3fn_KJ_v2.safetensors",
+      "sha256": "b1cd5a67e968e5bb38fcf84dab58f2fb551e0889fd463acb2a657259a70bbbf6"
+    },
+    {
+      "filename": "lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+      "sha256": "85c4a61c30e0497aa44b91d93a893b624708461a56fe5485183b28fa07e2dfb3"
+    },
+    {
+      "filename": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "sha256": "c3355d30191f1f066b26d93fba017ae9809dce6c627dda5f6a66eaa651204f68"
+    },
+    {
+      "filename": "clip_vision_h.safetensors",
+      "sha256": "64a7ef761bfccbadbaa3da77366aac4185a6c58fa5de5f589b42a65bcc21f161"
+    },
+    {
+      "filename": "wan_2.1_vae.safetensors",
+      "sha256": "2fc39d31359a4b0a64f55876d8ff7fa8d780956ae2cb13463b0223e15148976b"
+    }
+  ],
+  "generation": {
+    "mode": "native Wan Animate move mode, pose-only",
+    "settings": {
+      "width": 480,
+      "height": 832,
+      "fps": 24,
+      "requested_frames_per_chunk": 77,
+      "continuation_frames": 5,
+      "saved_continuation_frames": 72,
+      "steps": 6,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "sampling_shift": 8.0,
+      "denoise": 1.0,
+      "lora_strength": 1.0
+    },
+    "base_prompt_sha256": {
+      "positive": "ad91a73e18c0161ab8d1240f84d8dd3cbd73bad5170a912c974f867ad627cd89",
+      "negative": "289ced80253b52153562817afbce9151a436520c168fe9b08643e8dc26d3d083"
+    },
+    "smoke": {
+      "source_frames": [
+        216,
+        292
+      ],
+      "seed": 24082041,
+      "status": "accepted",
+      "runtime_seconds": 221.21,
+      "checks": [
+        "77 exact frames",
+        "one person",
+        "stable Yenia at original 0:10 interval",
+        "no gray matte or source appearance"
+      ]
+    },
+    "selected_chunks": [
+      {
+        "chunk": 0,
+        "video_frame_offset": 0,
+        "seed": 24082201,
+        "saved_frames": 77,
+        "workflow_sha256": "a21d2a566b2bed4785fa0c84b1f447258ad60827f5662ef48685fd0db1b606c8"
+      },
+      {
+        "chunk": 1,
+        "video_frame_offset": 72,
+        "seed": 24082202,
+        "saved_frames": 72,
+        "workflow_sha256": "611da6de94648029bc80003363fa2c9b85f7c0bada134004b071a209222daa37"
+      },
+      {
+        "chunk": 2,
+        "video_frame_offset": 144,
+        "seed": 24082203,
+        "saved_frames": 72,
+        "workflow_sha256": "b8d42631fe622e2067d33c184bd669ab439d0d0ded68a2013f4a626629e252fa"
+      },
+      {
+        "chunk": 3,
+        "video_frame_offset": 216,
+        "seed": 24082204,
+        "saved_frames": 72,
+        "workflow_sha256": "f942e71fdf6ca0af38ed203802ab188eea065e121849447879ba3eded643a779"
+      },
+      {
+        "chunk": 4,
+        "video_frame_offset": 288,
+        "seed": 24082205,
+        "saved_frames": 72,
+        "workflow_sha256": "af6548565f0b299c506e954efd268e479a972f59c5fe390a059bc6a95bcd4572"
+      }
+    ],
+    "bounded_retry": {
+      "chunk": 4,
+      "seed": 24082215,
+      "observed_defect": "compact tied updo elongated into a ponytail-like shape during the final spin and bend",
+      "positive_prompt_sha256": "12bd3d39fa903dae10046481b41dde67b182a2a5555f7a235ce5c66407bf8a40",
+      "negative_prompt_sha256": "96e20cae761ac2b020cd5dbc00dafc4d170492c560a7033d2c32b809a7fc42b5",
+      "result": "not selected because the named defect was not materially improved",
+      "comparison_exported": true
+    }
+  },
+  "assembly": {
+    "saved_chunk_frames": [
+      77,
+      72,
+      72,
+      72,
+      72
+    ],
+    "generated_frames": 365,
+    "delivered_frames": 360,
+    "trimmed_tail_frames": 5,
+    "seam_frame_indices": [
+      77,
+      149,
+      221,
+      293
+    ],
+    "audio": "cleared source audio frames 0-359",
+    "decoded_pcm_match": true,
+    "decoded_pcm_sha256": "fdd2d31f4edd54f143c8828e63a31718bd1f3809505dbb1b7a7aba3d2de0dd9a"
+  },
+  "visual_qa": {
+    "primary_every_delivered_frame_reviewed": true,
+    "one_person_all_frames": true,
+    "source_background_or_gray_leakage": false,
+    "source_face_or_clothing_leakage": false,
+    "visible_seam_reset": false,
+    "original_0_10_interval_identity_jump": false,
+    "face_outfit_apartment_continuity": "accepted",
+    "recorded_limitation": "The tied updo elongates into a ponytail-like motion during approximately frames 329-359. One bounded prompt retry did not materially improve it."
+  },
+  "outputs": {
+    "selected_primary": {
+      "path": "final/yenia_dance_wan22_1080x1920.mp4",
+      "sha256": "cfb6da44fb10574c8416e3484f337412ab23f9542a07ab7e599985bc26ff427d",
+      "frames": 360,
+      "duration_seconds": 15.0,
+      "resolution": [
+        1080,
+        1920
+      ],
+      "fps": 24,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "faststart": true
+    },
+    "hair_prompt_comparison": {
+      "path": "final/yenia_dance_wan22_hairfix_1080x1920.mp4",
+      "sha256": "cc8fa99724f46f008b1c78d48bdd6b76bb054a91f2d1c601bb47b57615ffb107",
+      "frames": 360,
+      "duration_seconds": 15.0
+    }
+  },
+  "service_restoration": {
+    "comfyui_started_by_run_stopped": true,
+    "llama_chat": "healthy",
+    "llama_embed": "healthy"
+  },
+  "publication": "not_requested"
+}

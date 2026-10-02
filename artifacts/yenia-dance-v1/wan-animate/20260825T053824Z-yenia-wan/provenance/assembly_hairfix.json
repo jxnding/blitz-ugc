@@ -1,0 +1,65 @@
+{
+  "assembly_crop": [
+    468,
+    832
+  ],
+  "audio": "original-cleared-source-frames-0-through-final",
+  "audio_pcm_match": true,
+  "audio_pcm_sha256": "fdd2d31f4edd54f143c8828e63a31718bd1f3809505dbb1b7a7aba3d2de0dd9a",
+  "audio_sample_rate_for_comparison": 44100,
+  "chunks": [
+    {
+      "file": "take01_chunk00.mp4",
+      "frames": 77,
+      "sha256": "3f61dadba7e4d175a4afe0dfb9bc2a2dcf6a1cdb3aa0d6053a550db85cc5fe50"
+    },
+    {
+      "file": "take01_chunk01.mp4",
+      "frames": 72,
+      "sha256": "277fcbc1476cfa1429c9b131711e48dde7ff437c4af0a58fcc195ef885e94c84"
+    },
+    {
+      "file": "take01_chunk02.mp4",
+      "frames": 72,
+      "sha256": "1c80bee8bfe650e4aed2315c79c5a6d719e959a3e9055bd60cdf899bad502e9c"
+    },
+    {
+      "file": "take01_chunk03.mp4",
+      "frames": 72,
+      "sha256": "5a310ef4f602a627f020ea60e65b900bced8f322f090b5204df485c6141c28b9"
+    },
+    {
+      "file": "take01_chunk04_hairfix.mp4",
+      "frames": 72,
+      "sha256": "1e620a246125a1764d060bdd4844abfdb73f43512867ac521fbbfc175a026fdc"
+    }
+  ],
+  "duration_seconds": 15.0,
+  "final": {
+    "file": "yenia_dance_wan22_hairfix_1080x1920.mp4",
+    "sha256": "cc8fa99724f46f008b1c78d48bdd6b76bb054a91f2d1c601bb47b57615ffb107"
+  },
+  "final_resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "generated_frames": 365,
+  "master": {
+    "file": "yenia_dance_wan22_hairfix_480x832_master.mkv",
+    "sha256": "67fdf86c556598710eec17fe76bdf43b7e0b4c5df2bd7588db3fe3c581989d6b"
+  },
+  "model_resolution": [
+    480,
+    832
+  ],
+  "output_frames": 360,
+  "schema_version": 1,
+  "seam_frame_indices": [
+    77,
+    149,
+    221,
+    293
+  ],
+  "trimmed_generated_tail_frames": 5
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "take": 2,
+  "segment": "b",
+  "output": "runs/take-2/segment-b/yenia-segment-b_00001_.mp4",
+  "output_sha256": "7532bbafeadc630078a0b703fe06cb361b41b65e56495585003a2804541304ba",
+  "frames": 209,
+  "fps": 24,
+  "resolution": [
+    576,
+    1024
+  ],
+  "review_scope": "every output frame plus enlarged frames 0-15, spin and hair frames 120-180, overlap with Take 2 Segment A frames 218-225, and final frames 192-208",
+  "visual_gate": "pass",
+  "checks": {
+    "exactly_one_adult_yenia": true,
+    "identity_face_stable": true,
+    "secured_updo_stable": true,
+    "hoodie_skirt_socks_and_sneakers_stable": true,
+    "apartment_stable": true,
+    "no_source_crowd_exterior_text_logo_or_watermark": true,
+    "hands_feet_limbs_and_occlusion_acceptable": true,
+    "no_exit_cut_disappearance_or_camera_jump": true,
+    "overlap_pose_and_camera_continuity_acceptable": true
+  },
+  "decision": "Select with Take 2 Segment A. After dropping Segment B frames 0-4, the arms-up movement and camera composition continue across the hard join without a scene or pose reset."
+}

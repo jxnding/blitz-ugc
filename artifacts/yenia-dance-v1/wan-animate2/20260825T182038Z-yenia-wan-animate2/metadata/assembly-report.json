@@ -1,0 +1,35 @@
+{
+  "assembly_crop": [
+    468,
+    832
+  ],
+  "audio": "original-cleared-source-frames-0-through-final",
+  "audio_pcm_match": true,
+  "audio_pcm_sha256": "fdd2d31f4edd54f143c8828e63a31718bd1f3809505dbb1b7a7aba3d2de0dd9a",
+  "audio_sample_rate_for_comparison": 44100,
+  "duration_seconds": 15.0,
+  "final": "yenia_dance_wan_animate2_distilled_720x1280.mp4",
+  "final_resolution": [
+    720,
+    1280
+  ],
+  "fps": 24,
+  "generated_frames": 361,
+  "master": "yenia_dance_wan_animate2_distilled_480x832_master.mkv",
+  "model_crop": [
+    480,
+    832,
+    0,
+    8
+  ],
+  "model_resolution": [
+    480,
+    832
+  ],
+  "native_generation_resolution": [
+    480,
+    848
+  ],
+  "output_frames": 360,
+  "trimmed_generated_tail_frames": 1
+}

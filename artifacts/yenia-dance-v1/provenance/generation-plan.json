@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "engine": "MiniMax H3 Ref2VA through local ComfyUI",
+  "settings": {
+    "resolution": [576, 1024],
+    "fps": 24,
+    "steps": 20,
+    "sampler": "res_multistep",
+    "scheduler": "beta",
+    "denoise": 1.0,
+    "ref_image_size": "match",
+    "paired_motion_audio": true,
+    "generated_audio_delivery": "discarded"
+  },
+  "segments": {
+    "a": {
+      "source_frames": [0, 225],
+      "length": 226
+    },
+    "b": {
+      "source_frames": [221, 429],
+      "length": 209,
+      "continuity_picture": "preceding Segment A final frame"
+    },
+    "assembly": {
+      "take_all_segment_a_frames": 226,
+      "drop_segment_b_frames": [0, 4],
+      "take_segment_b_frames": [5, 208],
+      "final_frames": 430
+    }
+  },
+  "takes": [
+    {
+      "take": 1,
+      "segment_a_seed": 24082011,
+      "segment_b_seed": 24082012,
+      "status": "segment-a-pass; segment-b-rejected",
+      "segment_a_output_sha256": "bd18e8a3f4bfaa10b2e1c8f988f47e6287db87339206350ae62b5b19cf80903d",
+      "segment_b_output_sha256": "b6c2b728321c3ea59934bc66c4e48b8f579e1623ba850bf1448d784f72d7f621",
+      "segment_b_rejection": "visible seam reset and secured-updo drift"
+    },
+    {
+      "take": 2,
+      "segment_a_seed": 24082021,
+      "segment_b_seed": 24082022,
+      "status": "complete-pass-selected",
+      "segment_a_output_sha256": "03c4c14337a9ba632523d149063486725c0b9832f33d2f2d00113a820ecb93a5",
+      "segment_b_output_sha256": "7532bbafeadc630078a0b703fe06cb361b41b65e56495585003a2804541304ba",
+      "model_master_sha256": "1c4e3666da0d5e42b1406f2fd958ab7bebb86163eb38cc57111bdd2ec33641c9",
+      "delivery_sha256": "7ae1a98020143fee822c0b5ad02279c85efbe01dd7a71f644c699845bbb61f86"
+    }
+  ],
+  "bounded_retry": {
+    "allowed_only_for_named_failed_segment": true,
+    "segment_a_seed": 24082031,
+    "segment_b_seed": 24082032,
+    "used": true,
+    "segment": "b",
+    "seed": 24082032,
+    "status": "completed-rejected",
+    "named_failures": [
+      "Segment B reset to the appearance anchor pose at the hard join",
+      "Yenia's secured black updo became long loose hair during the spin"
+    ],
+    "reference_priority": [
+      "preceding Segment A final frame",
+      "Yenia full-body appearance and apartment anchor",
+      "Yenia identity close-up"
+    ],
+    "prompt": "provenance/prompts/h3_segment_b_retry.txt",
+    "prompt_sha256": "125445e2723a6a5a02da63fd27f1b4cebc4998a02ccc172f2e7445d25ffe6834",
+    "output_sha256": "15c3e455e1cf66b23a87835449221e72fa841f802ce8b1298139985e089c43c9",
+    "rejection": "The secured updo becomes long loose hair during the spin; Take 2 Segment B preserves the intended hairstyle and continuity more cleanly."
+  },
+  "selected_take": "take-2"
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "rights": {
+    "visuals": "user-confirmed-cleared-for-this-adaptation",
+    "audio": "user-confirmed-cleared-for-this-adaptation",
+    "character": "original-clearly-adult-virtual-character"
+  },
+  "assets": [
+    {
+      "path": "source_media/v15044gf0000d2iftvvog65qkljod3j0.MP4",
+      "role": "source motion, timing, camera movement, and final soundtrack only",
+      "sha256": "8f5011accef0b5be61618d8bd845c63add3b007c4fb640f246a6b4ad682d2913"
+    },
+    {
+      "path": "characters/yenia/face.png",
+      "role": "Yenia facial identity reference",
+      "sha256": "17bfef209000a6966063d5d319896b26d8585bd51b5026d7b76c023b8b2e6e90"
+    },
+    {
+      "path": "characters/yenia/face_profile.png",
+      "role": "unused character reference retained unchanged",
+      "sha256": "ddd68d16a3aa7e707bc10f39994f58ca2e4f2c8f063c9569b0b022aad7763422"
+    },
+    {
+      "path": "characters/yenia/face_expressions.png",
+      "role": "unused character reference retained unchanged",
+      "sha256": "cec3dd8460581eca6bb7db191e14219b60de60568a22c39cecdc4e7725212250"
+    },
+    {
+      "path": "characters/yenia/outfits.png",
+      "role": "Yenia hoodie outfit and apartment source sheet",
+      "sha256": "4c57f4bc30d0eae45814bd62c6aec2b4d459aad314214c05b2dd625e6a4333bc"
+    },
+    {
+      "path": "inputs/yenia_hoodie_panel.png",
+      "role": "bottom-middle outfit and apartment crop for the appearance anchor",
+      "sha256": "7bd1536f49b8b6186d94d93ecdb851e5e056d3db90b0c1b382643fb5ff269255"
+    },
+    {
+      "path": "inputs/source_frame_0258.png",
+      "role": "posture and framing only for the appearance anchor",
+      "sha256": "823fdba47c708cad3dd926215a9b711146ec4cc03221a36f00d02486b871098e"
+    },
+    {
+      "path": "inputs/yenia_h3_appearance_anchor.png",
+      "role": "primary H3 appearance, outfit, apartment, lighting, and composition reference",
+      "sha256": "9728c986d07d3e6399caf4f6961fb496ff9f432e27d059fcf469a1ca0b10cef6"
+    },
+    {
+      "path": "inputs/isolated-stabilized/segment_a.mp4",
+      "role": "H3 motion and paired-rhythm reference for source frames 0-225",
+      "frames": 226,
+      "sha256": "648c8a03aacb1547d46352bd005d6567e9738c611c1bc0bfc20e08889fd68651"
+    },
+    {
+      "path": "inputs/isolated-stabilized/segment_b.mp4",
+      "role": "H3 motion and paired-rhythm reference for source frames 221-429",
+      "frames": 209,
+      "sha256": "5b54e5fa25d6d1102d5893de7dd27e2fc6b8ece03d183e8b45e528f291f12088"
+    }
+  ],
+  "active_range": {
+    "frames": [0, 429],
+    "frame_count": 430,
+    "fps": 24,
+    "duration_seconds": 17.9166666667,
+    "excluded_slate_start_frame": 430
+  },
+  "split": {
+    "segment_a": [0, 225],
+    "segment_b": [221, 429],
+    "overlap_frames": 5
+  }
+}

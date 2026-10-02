@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "take": 2,
+  "selection": "final",
+  "segment_a": "runs/take-2/segment-a/yenia-segment-a_00001_.mp4",
+  "segment_b": "runs/take-2/segment-b/yenia-segment-b_00001_.mp4",
+  "assembly": {
+    "segment_a_frames": [
+      0,
+      225
+    ],
+    "segment_b_frames": [
+      5,
+      208
+    ],
+    "overlap_frames_dropped_from_b": 5,
+    "final_frames": 430,
+    "fps": 24,
+    "duration_seconds": 17.9166666667
+  },
+  "model_master": {
+    "path": "runs/take-2/assembled/model_master.mkv",
+    "sha256": "1c4e3666da0d5e42b1406f2fd958ab7bebb86163eb38cc57111bdd2ec33641c9",
+    "resolution": [
+      576,
+      1024
+    ],
+    "audio_pcm_sha256": "86fd4148f80820668c9d6a9efc3d9914cfb3ed7f130c1dc759339d1d90b35c7f",
+    "audio_pcm_matches_approved_source_range": true
+  },
+  "delivery": {
+    "path": "runs/take-2/assembled/yenia_dance_h3_1080x1920.mp4",
+    "sha256": "7ae1a98020143fee822c0b5ad02279c85efbe01dd7a71f644c699845bbb61f86",
+    "resolution": [
+      1080,
+      1920
+    ]
+  },
+  "review_scope": "all 430 frames in seven contiguous contact sheets, enlarged frames 220-232 around the hard join, and technical verification of every required output property",
+  "visual_gate": "pass",
+  "checks": {
+    "exactly_one_adult_yenia_in_every_frame": true,
+    "identity_face_and_secured_updo_stable": true,
+    "hoodie_skirt_socks_and_sneakers_stable": true,
+    "apartment_stable": true,
+    "no_source_person_crowd_exterior_text_logo_or_watermark": true,
+    "hands_feet_limbs_fabric_and_occlusion_acceptable": true,
+    "continuous_camera_and_no_visible_scene_cut": true,
+    "hard_join_acceptable": true,
+    "continuous_yenia_through_source_handoff": true
+  }
+}

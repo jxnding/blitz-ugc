@@ -1,0 +1,40 @@
+{
+  "captured_at_utc": "2026-08-25T05:35:54Z",
+  "system_ram_gib": 30,
+  "swap_gib": 8,
+  "disk_free_gib": 361,
+  "comfyui": {
+    "commit": "a7365071e47175fb06572d0a56d1bf4116c2f581",
+    "version": "0.33.0",
+    "running": false
+  },
+  "containers": [
+    {
+      "name": "llama-chat",
+      "status": "healthy",
+      "gpu": "RTX 3090",
+      "gpu_memory_mib": 16686
+    },
+    {
+      "name": "llama-embed",
+      "status": "healthy",
+      "gpu": "RTX 2080 Ti",
+      "gpu_memory_mib": 9706
+    }
+  ],
+  "gpus": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 2080 Ti",
+      "memory_total_mib": 11264,
+      "memory_used_mib": 9710
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_total_mib": 24576,
+      "memory_used_mib": 16728
+    }
+  ],
+  "mutation_boundary": "Stop only the service occupying the GPU needed by the active stage; restore all stopped services after generation. Existing models and outputs are preserved."
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "asset": {
+    "path": "inputs/yenia_h3_appearance_anchor.png",
+    "sha256": "9728c986d07d3e6399caf4f6961fb496ff9f432e27d059fcf469a1ca0b10cef6",
+    "width": 941,
+    "height": 1672
+  },
+  "tool": {
+    "name": "Codex built-in image editor",
+    "model_version": "not exposed by the built-in interface",
+    "seed": "not exposed by the built-in interface"
+  },
+  "prompt": {
+    "path": "provenance/prompts/appearance_anchor.txt"
+  },
+  "inputs": [
+    {
+      "role": "base appearance, outfit, and apartment",
+      "path": "inputs/yenia_hoodie_panel.png",
+      "sha256": "7bd1536f49b8b6186d94d93ecdb851e5e056d3db90b0c1b382643fb5ff269255"
+    },
+    {
+      "role": "Yenia identity close-up",
+      "path": "characters/yenia/face.png",
+      "sha256": "17bfef209000a6966063d5d319896b26d8585bd51b5026d7b76c023b8b2e6e90"
+    },
+    {
+      "role": "rights-cleared pose and framing only",
+      "path": "inputs/source_frame_0258.png",
+      "sha256": "823fdba47c708cad3dd926215a9b711146ec4cc03221a36f00d02486b871098e"
+    }
+  ],
+  "selection": {
+    "accepted_attempt": 1,
+    "targeted_correction_used": false,
+    "checks": {
+      "exactly_one_adult_character": "pass",
+      "yenia_identity_and_hair": "pass",
+      "hoodie_skirt_socks_sneakers": "pass",
+      "apartment_preserved": "pass",
+      "full_body_and_both_shoes_visible": "pass",
+      "hands_feet_and_proportions": "pass",
+      "no_source_people_exterior_text_or_watermark": "pass"
+    }
+  }
+}
